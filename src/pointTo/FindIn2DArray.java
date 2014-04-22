@@ -1,6 +1,6 @@
 package pointTo;
 
-public class findIn2DArray {
+public class FindIn2DArray {
 
 	public static boolean findIn2DArray(int[][] input, int target) {
 		boolean found = false;
