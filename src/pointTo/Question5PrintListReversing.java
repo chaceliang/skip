@@ -4,22 +4,22 @@ import java.util.Stack;
 
 public class Question5PrintListReversing {
 	
-	public static void recursion(Node head) {
+	public static void recursion(ListNode head) {
 		if (head != null) {
 			recursion(head.next);
 			System.out.print(head.value + " ");
 		}
 	}
 
-	public static void nonRecursion(Node head) {
-		Stack<Node> stack = new Stack<Node>();
+	public static void nonRecursion(ListNode head) {
+		Stack<ListNode> stack = new Stack<ListNode>();
 		while (head != null) {
 			stack.push(head);
 			head = head.next;
 		}
 		
 		while (!stack.empty()) {
-			Node n = stack.pop();
+			ListNode n = stack.pop();
 			System.out.print(n.value + " ");
 		}
 	}
@@ -27,9 +27,9 @@ public class Question5PrintListReversing {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Node head = new Node(5);
-		head.next = new Node(4);
-		head.next.next = new Node(3);
+		ListNode head = new ListNode(5);
+		head.next = new ListNode(4);
+		head.next.next = new ListNode(3);
 		
 		nonRecursion(head);
 	}
