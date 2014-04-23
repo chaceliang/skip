@@ -1,10 +1,10 @@
 package pointTo;
 
-public class Node {
+public class ListNode {
 	int value;
-	Node next;
+	ListNode next;
 	
-	public Node(int v) {
+	public ListNode(int v) {
 		this.value = v;
 		next = null;
 	}
