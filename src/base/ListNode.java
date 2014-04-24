@@ -1,8 +1,8 @@
-package pointTo;
+package base;
 
 public class ListNode {
-	int value;
-	ListNode next;
+	public int value;
+	public ListNode next;
 	
 	public ListNode(int v) {
 		this.value = v;
