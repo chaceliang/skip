@@ -25,7 +25,7 @@ public class Question23PrintTreeByLevel {
 					container.add(n.right);
 				}
 			}
-			System.out.println();
+			System.out.println();	
 		}
 	}
 	/**
