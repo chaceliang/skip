@@ -20,24 +20,21 @@ public class Question34UlgyNumber {
 		int next3 = 3;
 		int next5 = 5;
 		
-		int index2 = 0;
-		int index3 = 0;
-		int index5 = 0;
+		int index2 = 1;
+		int index3 = 1;
+		int index5 = 1;
 		
 		while (uglyIndex <= index) {
 			int min = min(next2, next3, next5);
 			uglyNumbers[uglyIndex++] = min;
 			if (next2 == min) {
-				index2++;
-				next2 = uglyNumbers[index2] * 2;
+				next2 = uglyNumbers[index2++] * 2;
 			}
 			if (next3 == min) {
-				index3++;
-				next3 = uglyNumbers[index3] * 3;
+				next3 = uglyNumbers[index3++] * 3;
 			}
 			if (next5 == min) {
-				index5++;
-				next5 = uglyNumbers[index5] * 5;
+				next5 = uglyNumbers[index5++] * 5;
 			}
 		}
 		return uglyNumbers[index];
