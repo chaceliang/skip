@@ -44,9 +44,8 @@ public class Question42ReverseStringByWord {
 		}
 		
 		int length = input.length();
-		if (length < n) {
-			return input;
-		}
+		n %= length;
+		
 		char[] temp = input.toCharArray();
 		reverse(temp, 0, length - 1);
 		
@@ -76,7 +75,7 @@ public class Question42ReverseStringByWord {
 		String test22 = "abcdefg";
 		System.out.println(leftRotate(test22, 7));
 		String test23 = "abcdefg";
-		System.out.println(leftRotate(test21, 8));
+		System.out.println(leftRotate(test23, 8));
 		String test24 = "abcdefg";
 		System.out.println(leftRotate(test24, 0));
 		String test25 = "abcdefg";
