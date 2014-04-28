@@ -1,6 +1,6 @@
 package pointTo;
 
-public class Question48StringAndInt {
+public class Question49StringAndInt {
 	
 	public static int atoi(String input) {
 		if (input == null || input.length() < 0) {

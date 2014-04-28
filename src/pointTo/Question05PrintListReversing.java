@@ -3,7 +3,7 @@ package pointTo;
 import base.ListNode;
 import java.util.Stack;
 
-public class Question5PrintListReversing {
+public class Question05PrintListReversing {
 	
 	public static void recursion(ListNode head) {
 		if (head != null) {

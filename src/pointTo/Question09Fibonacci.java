@@ -1,6 +1,6 @@
 package pointTo;
 
-public class Question9Fibonacci {
+public class Question09Fibonacci {
 	
 	public static long fibonacci(int n) {
 		int result[] = {0, 1};

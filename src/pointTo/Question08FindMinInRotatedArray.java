@@ -1,6 +1,6 @@
 package pointTo;
 
-public class Question8FindMinInRotatedArray {
+public class Question08FindMinInRotatedArray {
 	
 	public static int findMinInorder(int[] input, int start, int end) {
 		int t = input[start];

@@ -6,7 +6,7 @@ import java.util.List;
 import base.TreeNode;
 import base.TreeUtils;
 
-public class Question6InorderPreorderToBT {
+public class Question06InorderPreorderToBT {
 	
 	public static TreeNode constructBST(List preorder, List inorder, int preorderIndex, int inorderIndex, int length) {
 		if (length == 0) {

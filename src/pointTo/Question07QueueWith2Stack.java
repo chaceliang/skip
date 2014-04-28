@@ -2,12 +2,12 @@ package pointTo;
 
 import java.util.Stack;
 
-public class Question7QueueWith2Stack {
+public class Question07QueueWith2Stack {
 	
 	Stack<Integer> stack1;
 	Stack<Integer> stack2;
 	
-	public Question7QueueWith2Stack() {
+	public Question07QueueWith2Stack() {
 		this.stack1 = new Stack<Integer>();
 		this.stack2 = new Stack<Integer>();
 	}
@@ -36,7 +36,7 @@ public class Question7QueueWith2Stack {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Question7QueueWith2Stack test = new Question7QueueWith2Stack();
+		Question07QueueWith2Stack test = new Question07QueueWith2Stack();
 		test.push(1); test.push(2); test.push(3); test.push(4);
 		while (!test.empty()) {
 			System.out.print(test.pop() + " ");

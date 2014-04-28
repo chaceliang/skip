@@ -1,6 +1,6 @@
 package pointTo;
 
-public class Question4ReplaceBlank {
+public class Question04ReplaceBlank {
 	
 	public static char[] replaceBlank(char[] input) {
 		int endOfOriginal = 0;
