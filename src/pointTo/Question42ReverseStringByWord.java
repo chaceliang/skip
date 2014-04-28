@@ -37,6 +37,25 @@ public class Question42ReverseStringByWord {
 		}
 		return new String(temp);
 	}
+	
+	public static String leftRotate(String input, int n) {
+		if (input == null || input.length() < 0) {
+			return null;
+		}
+		
+		int length = input.length();
+		if (length < n) {
+			return input;
+		}
+		char[] temp = input.toCharArray();
+		reverse(temp, 0, length - 1);
+		
+		reverse(temp, 0, length - 1 - n);
+		reverse(temp, length - n, length - 1);
+		
+		return new String(temp);
+	}
+	
 	/**
 	 * @param args
 	 */
@@ -49,6 +68,19 @@ public class Question42ReverseStringByWord {
 		System.out.println(reverseString(test3));
 		String test4 = null;
 		System.out.println(reverseString(test4));
+		
+		System.out.println("=====================");
+		
+		String test21 = "abcdefg";
+		System.out.println(leftRotate(test21, 2));
+		String test22 = "abcdefg";
+		System.out.println(leftRotate(test22, 7));
+		String test23 = "abcdefg";
+		System.out.println(leftRotate(test21, 8));
+		String test24 = "abcdefg";
+		System.out.println(leftRotate(test24, 0));
+		String test25 = "abcdefg";
+		System.out.println(leftRotate(test25, 4));
 	}
 
 }
