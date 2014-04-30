@@ -18,7 +18,6 @@ public class TwoSum {
 			} else {
 				small = hash.get(numbers[i]);
 				big = i;
-
 			}
 		}
 		result[0] = small + 1;
