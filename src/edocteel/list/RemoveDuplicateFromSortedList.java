@@ -9,17 +9,18 @@ public class RemoveDuplicateFromSortedList {
 			return head;
 		}
 		ListNode l = head;
-		int currentValue = l.val;
-		l = l.next;
-		ListNode r = l;
-		while (l != null && r != null) {
-			if (r.val == currentValue) {
-				r = r.next;
-			} else {
-				l.next = r;
-				l = l.next;
-				r = r.next;
+		
+		while (l.next != null) {
+			ListNode p = l.next;
+			while (p != null && p.val == l.val) {
+				p = p.next;
 			}
+			if (p == null) {
+				l.next = null;
+				break;
+			}
+			l.next = p;
+			l = l.next;
 		}
 		return head;
 	}
