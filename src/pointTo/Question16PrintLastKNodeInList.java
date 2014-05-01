@@ -35,11 +35,11 @@ public class Question16PrintLastKNodeInList {
 		head1.next.next.next.next = new ListNode(1);
 		head1.next.next.next.next.next = new ListNode(0);
 		// 5->4->3->2->1->0
-		System.out.println(findLastKNode(head1, 0) == null ? -1 : findLastKNode(head1, 0).value);
-		System.out.println(findLastKNode(head1, 2) == null ? -1 : findLastKNode(head1, 2).value);
-		System.out.println(findLastKNode(head1, 6) == null ? -1 : findLastKNode(head1, 6).value);
-		System.out.println(findLastKNode(head1, 7) == null ? -1 : findLastKNode(head1, 7).value);
-		System.out.println(findLastKNode(null, 7) == null ? -1 : findLastKNode(null, 7).value);
+		System.out.println(findLastKNode(head1, 0) == null ? -1 : findLastKNode(head1, 0).val);
+		System.out.println(findLastKNode(head1, 2) == null ? -1 : findLastKNode(head1, 2).val);
+		System.out.println(findLastKNode(head1, 6) == null ? -1 : findLastKNode(head1, 6).val);
+		System.out.println(findLastKNode(head1, 7) == null ? -1 : findLastKNode(head1, 7).val);
+		System.out.println(findLastKNode(null, 7) == null ? -1 : findLastKNode(null, 7).val);
 	}
 
 }

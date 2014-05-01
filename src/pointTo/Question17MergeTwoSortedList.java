@@ -12,7 +12,7 @@ public class Question17MergeTwoSortedList {
 			return head1;
 		}
 		ListNode mergeHead = null;
-		if (head1.value > head2.value) {
+		if (head1.val > head2.val) {
 			mergeHead = head2;
 			mergeHead.next = mergeSortedList(head1, head2.next);
 		} else {

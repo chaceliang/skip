@@ -1,11 +1,11 @@
 package base;
 
 public class ListNode {
-	public int value;
+	public int val;
 	public ListNode next;
 	
 	public ListNode(int v) {
-		this.value = v;
+		this.val = v;
 		next = null;
 	}
 	
@@ -36,7 +36,7 @@ public class ListNode {
 	
 	public static void printList(ListNode head) {
 		while (head != null) {
-			System.out.print(head.value + " ");
+			System.out.print(head.val + " ");
 			head = head.next;
 		}
 		System.out.println();

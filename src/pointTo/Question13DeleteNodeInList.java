@@ -10,7 +10,7 @@ public class Question13DeleteNodeInList {
 		}
 		if (target.next != null) {
 			ListNode next = target.next;
-			target.value = next.value;
+			target.val = next.val;
 			target.next = target.next.next;
 		} else if (head == target) {
 			head = null;

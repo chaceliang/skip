@@ -33,7 +33,7 @@ public class Question37FirstCommonNodeInTwoLists {
 			diff--;
 		}
 		while (p1 != null && p2 != null) {
-			if (p1.value == p2.value) {
+			if (p1.val == p2.val) {
 				return p1;
 			}
 			p1 = p1.next;

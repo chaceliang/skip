@@ -24,7 +24,7 @@ public class Question16ReverseList {
 		ListNode node = ListNode.giveMeAList();
 		ListNode tail = reverse(null);
 		while (tail != null) {
-			System.out.print(tail.value + " ");
+			System.out.print(tail.val + " ");
 			tail = tail.next;
 		}
 		System.out.println();

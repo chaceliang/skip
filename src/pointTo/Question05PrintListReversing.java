@@ -8,7 +8,7 @@ public class Question05PrintListReversing {
 	public static void recursion(ListNode head) {
 		if (head != null) {
 			recursion(head.next);
-			System.out.print(head.value + " ");
+			System.out.print(head.val + " ");
 		}
 	}
 
@@ -21,7 +21,7 @@ public class Question05PrintListReversing {
 		
 		while (!stack.empty()) {
 			ListNode n = stack.pop();
-			System.out.print(n.value + " ");
+			System.out.print(n.val + " ");
 		}
 	}
 	/**
