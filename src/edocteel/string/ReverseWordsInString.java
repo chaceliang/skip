@@ -1,4 +1,4 @@
-package edocteel;
+package edocteel.string;
 
 public class ReverseWordsInString {
 
