@@ -1,4 +1,4 @@
-package edocteel;
+package edocteel.array;
 
 import java.util.HashMap;
 
