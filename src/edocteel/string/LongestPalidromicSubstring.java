@@ -36,7 +36,32 @@ public class LongestPalidromicSubstring {
 			return "";
 		}
 		int length = s.length();
-		
+		int longestStart = 0;
+		int maxLen = 1;
+		boolean[][] table = new boolean[length][length];
+		for (int i = 0; i < length; i++) {
+			table[i][i] = true;
+		}
+		for (int i = 0; i < length - 1; i++) {
+			if (s.charAt(i) == s.charAt(i+1)) {
+				table[i][i+1] = true;
+				longestStart = i;
+				maxLen = 2;
+			} else {
+				table[i][i+1] = false;
+			}
+		}
+		for(int len = 3; len <= length; len++) {
+			for (int i = 0; i < length - len + 1; i++) {
+				int j = i + len - 1;
+				if (s.charAt(i) == s.charAt(j) && table[i+1][j-1]) {
+					table[i][j] = true;
+					longestStart = i;
+					maxLen = len;
+				}
+			}
+		}
+		return s.substring(longestStart, longestStart + maxLen);
 	}
 	/**
 	 * @param args
