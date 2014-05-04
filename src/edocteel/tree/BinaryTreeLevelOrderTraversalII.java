@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BinaryTreeLevelOrderTraversal {
-
-    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
+/**
+ * Created by chace on 5/3/14.
+ */
+public class BinaryTreeLevelOrderTraversalII {
+    public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         if (root == null) {
             return result;
@@ -28,16 +30,8 @@ public class BinaryTreeLevelOrderTraversal {
                     tmp.add(node.right);
                 }
             }
-            result.add(level);
+            result.add(0, level);
         }
         return result;
     }
-    
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-
-    }
-
 }

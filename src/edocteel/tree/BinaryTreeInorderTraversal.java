@@ -1,8 +1,8 @@
 package edocteel.tree;
 
-import java.util.ArrayList;
-
 import base.TreeNode;
+
+import java.util.ArrayList;
 
 public class BinaryTreeInorderTraversal {
 
