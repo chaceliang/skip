@@ -1,4 +1,4 @@
-package edocteel.string;
+package edocteel.dp;
 
 public class LongestPalidromicSubstring {
 
