@@ -50,7 +50,7 @@ public class Question27BST2DoubleLinkedList {
 	public static void printTree(TreeNode root) {
         if (root==null) return;
         printTree(root.left);
-        System.out.print(Integer.toString(root.value) + " ");
+        System.out.print(Integer.toString(root.val) + " ");
         printTree(root.right);
     }
     
@@ -60,7 +60,7 @@ public class Question27BST2DoubleLinkedList {
     	TreeNode current = head;
         
         while (current != null) {
-            System.out.print(Integer.toString(current.value) + " ");
+            System.out.print(Integer.toString(current.val) + " ");
             current = current.right;
             if (current == head) break;
         }
@@ -69,7 +69,7 @@ public class Question27BST2DoubleLinkedList {
     }
     
     public static void treeInsert(TreeNode root, int newData) {
-        if (newData<=root.value) {
+        if (newData<=root.val) {
             if (root.left!=null) treeInsert(root.left, newData);
             else root.left = new TreeNode(newData);
         }

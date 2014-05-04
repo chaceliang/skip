@@ -17,7 +17,7 @@ public class Question23PrintTreeByLevel {
 			int size = container.size();
 			for (int i = 0; i < size; i++) {
 				TreeNode n = container.poll();
-				System.out.print(n.value + " ");
+				System.out.print(n.val + " ");
 				if (n.left != null) {
 					container.add(n.left);
 				}

@@ -11,7 +11,7 @@ public class TreeUtils {
 			return;
 		}
 		printTreeInorder(node.left);
-		System.out.print(node.value + " ");
+		System.out.print(node.val + " ");
 		printTreeInorder(node.right);
 	}
 	/**

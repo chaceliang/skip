@@ -16,7 +16,7 @@ public class Question25FindSumPathInTree {
 	}
 	
 	public static void findPath(TreeNode node, LinkedList<TreeNode> path, int expectedSum, int currentSum) {
-		currentSum += node.value;
+		currentSum += node.val;
 		path.add(node);
 		boolean isLeaf = node.left == null && node.right == null;
 		if (currentSum == expectedSum && isLeaf) {
@@ -28,7 +28,7 @@ public class Question25FindSumPathInTree {
 		if (node.right != null) {
 			findPath(node.right, path, expectedSum, currentSum);
 		}
-		currentSum -= node.value;
+		currentSum -= node.val;
 		path.removeLast();
 	}
 

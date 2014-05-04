@@ -9,7 +9,7 @@ public class Question50LowestCommonAncestor {
 			return null;
 		}
 		
-		if (root.value == a.value || root.value == b.value) {
+		if (root.val == a.val || root.val == b.val) {
 			return root;
 		}
 		TreeNode l = lowestCommonAncestor(root.left, a, b);

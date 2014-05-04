@@ -11,7 +11,7 @@ public class Question18DoesTree1HasTree2 {
 		if (node1 == null) {
 			return false;
 		}
-		if (node1.value != node2.value) {
+		if (node1.val != node2.val) {
 			return false;
 		}
 		return doesTree1HasTree2(node1.left, node2.left) && doesTree1HasTree2(node1.right, node2.right);
