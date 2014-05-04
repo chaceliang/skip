@@ -6,17 +6,20 @@ import base.TreeNode;
  * Created by chace on 5/4/14.
  */
 public class SameTree {
-    public boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null || q == null) {
-            if (p == null && q == null) {
-                return true;
-            } else {
-                return false;
-            }
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+            return true;
         }
-        if (p.val != q.val) {
+        return helper(root.left, root.right);
+    }
+
+    public boolean helper(TreeNode n1, TreeNode n2) {
+        if (n1 == null && n2 == null) {
+            return true;
+        }
+        if ((n1 == null && n2 != null) || (n1 != null && n2 == null)) {
             return false;
         }
-        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+        return (n1.val == n2.val) && helper(n1.left, n2.right) && helper(n1.right, n2.left);
     }
 }
