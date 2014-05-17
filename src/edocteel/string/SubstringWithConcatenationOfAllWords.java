@@ -2,6 +2,7 @@ package edocteel.string;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class SubstringWithConcatenationOfAllWords {
 
@@ -42,6 +43,17 @@ public class SubstringWithConcatenationOfAllWords {
 					}
 				}
 			}
+            for (Map.Entry<String, Integer> entry : counter.entrySet()) {
+                if (!foundCounter.containsKey(entry.getKey())) {
+                    found = false;
+                    break;
+                } else {
+                    if (foundCounter.get(entry.getKey()) != entry.getValue()) {
+                        found = false;
+                        break;
+                    }
+                }
+            }
 			if (found) {
 				result.add(i);
 			}
