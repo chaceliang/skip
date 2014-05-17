@@ -41,6 +41,45 @@ public class Anagram {
         }
         return result;
 	}
+
+    public boolean isAnagram(String a, String b) {
+        if (a == null && b == null) {
+            return true;
+        } else if (a == null) {
+            return false;
+        } else if (b == null) {
+            return false;
+        }
+
+        HashMap<Character, Integer> counter = new HashMap<Character, Integer>();
+        for (int i = 0; i < a.length(); i++) {
+            int count = 0;
+            char c = a.charAt(i);
+            if (counter.containsKey(c)) {
+                count = counter.get(c);
+            } else {
+                count = 1;
+            }
+            counter.put(c, count);
+        }
+
+        for (int i = 0; i < b.length(); i++) {
+            char c = b.charAt(i);
+            if (!counter.containsKey(c)) {
+                return false;
+            } else {
+                int count = counter.get(c);
+                counter.put(c, count - 1);
+            }
+        }
+
+        for (Map.Entry<Character, Integer> entry : counter.entrySet()) {
+            if (entry.getValue() > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 	/**
 	 * @param args
 	 */
