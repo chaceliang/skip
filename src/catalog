@@ -1,127 +1,175 @@
 ==Sort&Search:
-3Sum
-3SumCloset
-4Sum
-sort colors
-search for a range
-search in a rotated sorted array I && II
-search insert position
-sqrt(x)
-first missing positive 
-Merge Sorted Array
-Search a 2D Matrix
-Two Sum
+/3Sum
+/3SumCloset
+/4Sum
+/sort colors
+/search for a range
+/search in a rotated sorted array I 
+/search in a rotated sorted array II
+/search insert position
+/first missing positive 
+/Merge Sorted Array
+/Search a 2D Matrix
+/Two Sum
+/Remove element
+/Median of Two Sorted Arrays
+/Remove Duplicates from Sorted Array I
+/Remove Duplicates from Sorted Array II
+/Search Insert
+/Set Matrix Zeroes
+/Spiral Matrix I
+/Spiral Matrix II
 
 ==Linkedlist:
-merge two sorted lists
-add two numbers
-Partition List
-Remove Duplicates from Sorted List I,II
-Remove Nth Node From End of List
-Reverse Linked List II
-Reverse Nodes in k-Group
-Rotate List
-Swap Nodes in Pairs
+/merge two sorted lists
+/add two numbers
+/Partition List
+/Sort List
+/Remove Duplicates from Sorted List I
+/Remove Duplicates from Sorted List II
+/Remove Nth Node From End of List
+/Reverse Linked List II
+/Reverse Nodes in k-Group
+/Rotate List
+/Swap Nodes in Pairs
+/Copy with random pointer
+/Insertion sort
+/Linkedlist cycle I
+/Linkedlist cycle II
+/Merge k Sorted Lists
+/Reorder list
 
 ==String manipulation:
-add binary
-anagrams
-Length of Last Word
-Longest Common Prefix
-Longest Palindromic Substring
-Longest Substring Without Repeating Characters
-Substring with Concatenation of All Words
+/add binary
+/anagrams
+/Length of Last Word
+/Longest Common Prefix
+/Longest Substring Without Repeating Characters
+/Substring with Concatenation of All Words
+/Reverse words in string
+/implementing strStr()
+/Palindrome Partitioning I
+/Palindrome Partitioning II
 
 ==Tree:
-balanced binary tree
-binary tree inorder traversal
-binary tree level order traversal I,II
-binary tree maximum path sum
-binary tree zigzag level order traversal
-construct binary tree from inorder and postorder traversal
-construct binary tree from preorder and inorder traversal
-convert sorted array to binary search tree
-convert sorted list to binary search tree
-flatten binary tree to linked list
-Maximum Depth of Binary Tree
-Minimum Depth of Binary Tree
-Populating Next Right Pointers in Each Node I,II
-Recover Binary Search Tree
-Same Tree
-Symmetric Tree
-Unique Binary Search Trees I,II
-Validate Binary Search Tree
+/balanced binary tree
+/binary tree inorder traversal
+/binary tree level order traversal I
+/binary tree level order traversal II
+/binary tree maximum path sum
+/Binary Tree Postorder Traversal
+/Binary Tree Preorder Traversal
+/binary tree zigzag level order traversal
+/construct binary tree from inorder and postorder traversal
+/construct binary tree from preorder and inorder traversal
+/convert sorted array to binary search tree
+/convert sorted list to binary search tree
+/flatten binary tree to linked list
+/Maximum Depth of Binary Tree
+/Minimum Depth of Binary Tree
+/Path Sum I
+/Path Sum II
+/Populating Next Right Pointers in Each Node I
+/Populating Next Right Pointers in Each Node II
+/Recover Binary Search Tree
+/Same Tree
+/Sum root to leaf numbers
+/Symmetric Tree
+/Unique Binary Search Trees I [DP]
+/Unique Binary Search Trees II
+/Validate Binary Search Tree
 
 ==Dynamic programming:
-climbing stairs
-combination sum I,II
-combinations
-decode ways
-edit distance
-generate parentheses
-Interleaving String
-Letter Combinations of a Phone Number
-Minimum Path Sum
-Permutations
-Unique Paths I,II
+/Interleaving String
+/climbing stairs
+/combination sum I
+/combination sum II
+/combinations
+/decode ways
+/edit distance
+/generate parentheses
+/Minimum Path Sum
+/Unique Paths I
+/Unique Paths II
+/Distinct Subsequences
+/jump game I
+/jump game II
+/Minimum Window Substring
+/Wildcard Matching
+/Regular Expression Matching
+/distinct subsequence
+/Candy
+/Gas Station
+/Longest Consecutive Sequence
+/Longest Palindromic Substring
+/Triangle
+/Word Break I
+/Word Break II
 
 ==Recursion:
-N-Queens I,II
-Path Sum I,II
-Pow(x, n)
-Subsets I,II
-Sudoku Solver
-Word Search    -dfs
+/Word Search    -dfs
+/Subsets I
+/Subsets II
+/Word Ladder I
+/Word Ladder II
+/Scramble String
+/Letter Combinations of a Phone Number
 
 ==Miscellaneous:
-best time to buy and sell stock I,II,III
-container with most water
-count and say
-gray code
-Insert Interval
-jump game I,II
-Maximal Rectangle
-Maximum Subarray 
-Median of Two Sorted Arrays
-Merge Intervals
-Minimum Window Substring
-Multiply Strings
-Palindrome Number
-Pascal's Triangle I,II
-Plus One
-Remove Duplicates from Sorted Array I,II
-Restore IP Addresses
-Reverse Integer
-Rotate Image
-Set Matrix Zeroes
-Spiral Matrix I,II
-Trapping Rain Water
-Valid Sudoku
-
-==Heap:
-Merge k Sorted Lists
+/best time to buy and sell stock I
+/best time to buy and sell stock II
+/best time to buy and sell stock III
+/container with most water
+/count and say
+/gray code
+/Insert Interval
+/LRU Cache
+/Maximum Subarray
+/Max points on a line
+/Merge Intervals
+/Multiply Strings
+/Next Permutation
+/N-Queens I
+/N-Queens II
+/Palindrome Number
+/Pascal's Triangle I
+/Pascal's Triangle II
+/Permutation Sequence
+/Permutations
+/Permutations II
+/Plus One
+/Restore IP Addresses
+/Reverse Integer
+/Rotate Image
+/Single Number
+/Single Number II
+/String to Integer (atoi)
+/Trapping Rain Water
+/Valid Number
+/Valid Palindrome
 
 ==Stack:
-Largest Rectangle in Histogram
-Longest Valid Parentheses
-Valid Parentheses
+/Largest Rectangle in Histogram
+/Longest Valid Parentheses
+/Valid Parentheses
+/Evaluate Reverse Polish Notation
+/Maximal Rectangle
+/Simplify Path
+
+==Math
+/divide two integers
+/Pow(x, n)
+/sqrt(x)
+
+==Graph
+/Clone Graph
+/Surrounded regions
 
 ==Not done yet:
-distinct subsequence
-divide two integers
-implementing strStr()
 Integer to Roman
-Next Permutation
-Permutation Sequence
-Permutations II
-Regular Expression Matching
-Remove Element
 Roman to Integer
-Scramble String
-Simplify Path
-String to Integer (atoi)
 Text Justification
-Triangle
-Valid Number
-Wildcard Matching
 ZigZag Conversion
+Sudoku Solver
+Valid Sudoku
+word ladder II

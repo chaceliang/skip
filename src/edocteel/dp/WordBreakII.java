@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Created by chace on 5/16/14.
  */
-public class WorkBreakII {
+public class WordBreakII {
 
     public ArrayList<String> wordBreak(String s, Set<String> dict) {
         ArrayList<String> results = new ArrayList<String>();

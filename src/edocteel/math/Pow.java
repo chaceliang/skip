@@ -1,4 +1,4 @@
-package edocteel;
+package edocteel.math;
 
 /**
  * Created by chace on 5/4/14.

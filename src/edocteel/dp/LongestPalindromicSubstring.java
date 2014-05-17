@@ -1,6 +1,6 @@
 package edocteel.dp;
 
-public class LongestPalidromicSubstring {
+public class LongestPalindromicSubstring {
 
 	public String longestPalindrome(String s) {
 		if (s == null || s.length() <= 0) {
@@ -67,7 +67,7 @@ public class LongestPalidromicSubstring {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		LongestPalidromicSubstring test = new LongestPalidromicSubstring();
+		LongestPalindromicSubstring test = new LongestPalindromicSubstring();
 		test.longestPalindrome("bb");
 	}
 

@@ -1,4 +1,4 @@
-package edocteel.array;
+package edocteel.math;
 
 public class Sqrt {
 	
