@@ -1,4 +1,4 @@
-package edocteel.miscellaneous;
+package edocteel.array;
 
 /**
  * Created by chace on 5/12/14.
