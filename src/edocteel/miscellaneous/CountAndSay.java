@@ -15,9 +15,9 @@ public class CountAndSay {
     public String countAndSay(String n) {
         int times = 1;
         char repeat = n.charAt(0);
-        n = n.substring(1) + " "; // in case n is empty string after substring
         StringBuilder result = new StringBuilder();
-        for (char c : n.toCharArray()) {
+        for (int i = 1; i < n.length(); i++) {
+            char c = n.charAt(i);
             if (c == repeat) {
                 times++;
             } else {
@@ -27,6 +27,13 @@ public class CountAndSay {
                 times = 1;
             }
         }
+        result.append(times);
+        result.append(repeat);
         return result.toString();
+    }
+
+    public static void main(String[] args) {
+        CountAndSay test = new CountAndSay();
+        test.countAndSay(3);
     }
 }
