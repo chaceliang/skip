@@ -16,9 +16,7 @@ public class PascalTriangle {
         for (int i = 1; i <= numRows; i++) {
             ArrayList<Integer> result = new ArrayList<Integer>();
             for (int j = 0; j < i; j++) {
-                if (j == 0) {
-                    result.add(1);
-                } else if (j == i-1) {
+                if (j == 0 || j == i - 1) {
                     result.add(1);
                 } else {
                     result.add(previous.get(j-1) + previous.get(j));
