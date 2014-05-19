@@ -11,7 +11,7 @@ public class WordSearch {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
                 if (board[i][j] == word.charAt(0)) {
-                    if (bfs(i, j, board, word, 0)) {
+                    if (dfs(i, j, board, word, 0)) {
                         return true;
                     }
                 }
@@ -20,7 +20,7 @@ public class WordSearch {
         return false;
     }
 
-    public boolean bfs(int i, int j, char[][] board, String word, int p) {
+    public boolean dfs(int i, int j, char[][] board, String word, int p) {
         if (p == word.length()) {
             return true;
         }
@@ -30,7 +30,7 @@ public class WordSearch {
             char tmp = board[i][j];
             board[i][j] = '#';
             p++;
-            if (bfs(i, j+1, board, word, p) || bfs(i+1, j, board, word, p) || bfs(i, j-1, board, word, p) || bfs(i-1, j, board, word, p)) {
+            if (dfs(i, j+1, board, word, p) || dfs(i+1, j, board, word, p) || dfs(i, j-1, board, word, p) || dfs(i-1, j, board, word, p)) {
                 return true;
             }
             board[i][j] = tmp;
