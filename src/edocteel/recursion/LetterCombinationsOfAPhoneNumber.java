@@ -34,4 +34,15 @@ public class LetterCombinationsOfAPhoneNumber {
             }
         }
     }
+
+    public void solve2(ArrayList<String> results, int p, String result, String digits) {
+        if (p == digits.length()) {
+            results.add(new String(result));
+            return;
+        }
+        int digit = digits.charAt(p) - '0';
+        for (int i = 0; i < mappings[digit].length; i++) {
+            solve2(results, p+1, result+mappings[digit][i], digits);
+        }
+    }
 }
