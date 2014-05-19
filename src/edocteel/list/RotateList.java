@@ -18,9 +18,8 @@ public class RotateList {
 		if (n == 0) {
 			return head;
 		}
-		int steps = length - n;
-		ListNode start = new ListNode(0);
-		start.next = head;
+		int steps = length - n - 1;
+		ListNode start = head;
 		while (steps > 0) {
 			start = start.next;
 			steps--;
