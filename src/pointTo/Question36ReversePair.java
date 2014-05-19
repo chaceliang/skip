@@ -4,41 +4,42 @@ public class Question36ReversePair {
 	
 	static int count = 0;
 	
-	public static void mergeArray(int[] input, int first, int mid, int last, int[] tmp) {
+	public static void mergeArray(int[] input, int first, int mid, int last) {
 		int i = first, j = mid + 1;
 		int m = mid, n = last;
-		int k = 0;
-		while (i <= m && j <= n) {
-			if (input[i] > input[j]) {
-				tmp[k++] = input[j++];
-				count += mid - i + 1;
-			} else {
-				tmp[k++] = input[i++];
-			}
+		int k = first;
+        int[] tm = new int[last+1];
+		while (i <= m || j <= n) {
+            if (i <= m && j <= n) {
+                if (input[i] > input[j]) {
+                    tm[k++] = input[j++];
+                    count += mid - i + 1;
+                } else {
+                    tm[k++] = input[i++];
+                }
+            } else if (i <= m) {
+                tm[k++] = input[i++];
+            } else if (j <= n) {
+                tm[k++] = input[j++];
+            }
 		}
-		
-		while (i <= m) {
-			tmp[k++] = input[i++];
-		}
-		while (j <= n) {
-			tmp[k++] = input[j++];
-		}
-		for (i = 0; i < k; i++) {
-			input[first + i] = tmp[i];
+
+		for (i = first; i <= last; i++) {
+			input[i] = tm[i];
 		}
 	}
 	
-	public static void mergeSort(int[] input, int first, int last, int[] tmp) {
+	public static void mergeSort(int[] input, int first, int last) {
 		if (first < last) {
 			int mid = (first + last) / 2;
-			mergeSort(input, first, mid, tmp);
-			mergeSort(input, mid + 1, last, tmp);
-			mergeArray(input, first, mid, last, tmp);
+			mergeSort(input, first, mid);
+			mergeSort(input, mid + 1, last);
+			mergeArray(input, first, mid, last);
 		}
 	}
 	
 	public static void mergeSort(int[] input) {
-		mergeSort(input, 0, input.length - 1, new int[input.length]);
+		mergeSort(input, 0, input.length - 1);
 	}
 
 	/**
