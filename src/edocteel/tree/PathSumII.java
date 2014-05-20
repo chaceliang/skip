@@ -23,7 +23,7 @@ public class PathSumII {
                 result.add(root.val);
                 results.add((ArrayList<Integer>) result.clone());
                 result.remove(result.size() - 1);
-        }
+            }
         } else {
             result.add(root.val);
             helper(results, result, root.left, sum - root.val);
