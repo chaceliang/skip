@@ -14,9 +14,7 @@ public class PopulatingNextRightPointersInEachNode {
             return;
         }
         LinkedList<TreeLinkNode> nextLevelNodes = new LinkedList<TreeLinkNode>();
-        TreeLinkNode curLevel = root;
-        curLevel.next = null;
-        nextLevelNodes.add(curLevel);
+        nextLevelNodes.add(root);
         TreeLinkNode cur = null;
         while (!nextLevelNodes.isEmpty()) {
             cur = nextLevelNodes.get(0);
