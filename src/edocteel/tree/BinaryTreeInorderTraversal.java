@@ -19,10 +19,6 @@ public class BinaryTreeInorderTraversal {
 	    if (node == null) {
 	        return;
 	    }
-	    if (node.left == null && node.right == null) {
-	        result.add(node.val);
-	        return;
-	    }
 	    helper(node.left, result);
 	    result.add(node.val);
 	    helper(node.right, result);
