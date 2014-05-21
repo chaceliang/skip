@@ -36,13 +36,13 @@ public class WordBreakII {
             return results;
         }
 
-        dfs(s, seg, 0, 0, results, new StringBuilder(), dict);
+        dfs(s, seg, 0, results, new StringBuilder(), dict);
 
         return results;
     }
 
-    private void dfs(String s, boolean[][] seg, int start, int depth, ArrayList<String> results, StringBuilder builder, Set<String> dict) {
-        if (depth == s.length()) {
+    private void dfs(String s, boolean[][] seg, int start, ArrayList<String> results, StringBuilder builder, Set<String> dict) {
+        if (start == s.length()) {
             String t = builder.toString();
             results.add(t.substring(0, t.length() - 1));
             return;
@@ -55,7 +55,7 @@ public class WordBreakII {
                     int beforeAddLen = builder.length();
                     builder.append(t);
                     builder.append(" ");
-                    dfs(s, seg, start+len, start+len, results, builder, dict);
+                    dfs(s, seg, start+len, results, builder, dict);
                     builder.delete(beforeAddLen, builder.length());
                 }
             }
