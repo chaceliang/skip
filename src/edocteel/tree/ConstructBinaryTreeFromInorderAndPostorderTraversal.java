@@ -20,7 +20,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
         for (int i = is; i <= ie; i++) {
             if (inorder[i] == rootValue) {
                 root.left = helper(inorder, is, i-1, postorder, ps, ps+i-is-1);
-                root.right = helper(inorder, i+1, ie, postorder, pe-(ie-i), pe-1);
+                root.right = helper(inorder, i+1, ie, postorder, ps+i-is, pe-1);
             }
         }
         return root;
