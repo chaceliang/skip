@@ -2,168 +2,168 @@
 /3Sum
 /3SumCloset
 /4Sum
-/sort colors
-/search for a range
-/search in a rotated sorted array I 
-/search in a rotated sorted array II
-/search insert position
-/first missing positive 
-/Merge Sorted Array
-/Search a 2D Matrix
-/Two Sum
-/Remove element
-/Median of Two Sorted Arrays
-/Remove Duplicates from Sorted Array I
-/Remove Duplicates from Sorted Array II
-/Search Insert
-/Set Matrix Zeroes
-/Spiral Matrix I
-/Spiral Matrix II
+0/sort colors
+0/search for a range
+1/search in a rotated sorted array I
+2/search in a rotated sorted array II
+0/search insert position
+0/first missing positive
+0/Merge Sorted Array
+0/Search a 2D Matrix
+0/Two Sum
+0/Remove element
+2/Median of Two Sorted Arrays
+1/Remove Duplicates from Sorted Array I
+1/Remove Duplicates from Sorted Array II
+0/Set Matrix Zeroes
+0/Spiral Matrix I
+0/Spiral Matrix II
+1/Rotate Image
 
 ==Linkedlist:
-/merge two sorted lists
-/add two numbers
-/Partition List
-/Sort List
-/Remove Duplicates from Sorted List I
-/Remove Duplicates from Sorted List II
-/Remove Nth Node From End of List
-/Reverse Linked List II
-/Reverse Nodes in k-Group
-/Rotate List
-/Swap Nodes in Pairs
-/Copy with random pointer
-/Insertion sort
-/Linkedlist cycle I
-/Linkedlist cycle II
-/Merge k Sorted Lists
-/Reorder list
+0/add two numbers
+1/Copy with random pointer
+1/Insertion sort
+0/merge two sorted lists
+0/Partition List
+1/Sort List
+1/Remove Duplicates from Sorted List I
+2/Remove Duplicates from Sorted List II
+0/Remove Nth Node From End of List
+1/Reverse Linked List II
+0/Reverse Nodes in k-Group
+0/Rotate List
+0/Swap Nodes in Pairs // Same as reverse in k-group
+0/Linkedlist cycle I
+1/Linkedlist cycle II
+1/Merge k Sorted Lists
+1/Reorder list
 
 ==String manipulation:
-/add binary
-/anagrams
-/Length of Last Word
-/Longest Common Prefix
-/Longest Substring Without Repeating Characters
-/Substring with Concatenation of All Words
-/Reverse words in string
-/implementing strStr()
-/Palindrome Partitioning I
-/Palindrome Partitioning II
+0/add binary
+0/anagrams
+0/Length of Last Word
+0/Longest Common Prefix
+0/Longest Substring Without Repeating Characters
+1/Palindrome Partitioning I
+2/Palindrome Partitioning II
+0/Reverse words in string
+0/implementing strStr()
+1/Substring with Concatenation of All Words
 
 ==Tree:
-/balanced binary tree
-/binary tree inorder traversal
-/binary tree level order traversal I
-/binary tree level order traversal II
-/binary tree maximum path sum
-/Binary Tree Postorder Traversal
-/Binary Tree Preorder Traversal
-/binary tree zigzag level order traversal
-/construct binary tree from inorder and postorder traversal
-/construct binary tree from preorder and inorder traversal
-/convert sorted array to binary search tree
-/convert sorted list to binary search tree
-/flatten binary tree to linked list
-/Maximum Depth of Binary Tree
-/Minimum Depth of Binary Tree
-/Path Sum I
-/Path Sum II
-/Populating Next Right Pointers in Each Node I
-/Populating Next Right Pointers in Each Node II
-/Recover Binary Search Tree
-/Same Tree
-/Sum root to leaf numbers
-/Symmetric Tree
-/Unique Binary Search Trees I [DP]
-/Unique Binary Search Trees II
-/Validate Binary Search Tree
+1/balanced binary tree
+0/binary tree inorder traversal
+0/binary tree level order traversal I
+0/binary tree level order traversal II
+2/binary tree maximum path sum
+0/Binary Tree Postorder Traversal
+0/Binary Tree Preorder Traversal
+1/binary tree zigzag level order traversal
+1/construct binary tree from inorder and postorder traversal
+1/construct binary tree from preorder and inorder traversal
+0/convert sorted array to binary search tree
+1/convert sorted list to binary search tree
+1/flatten binary tree to linked list
+0/Maximum Depth of Binary Tree
+1/Minimum Depth of Binary Tree
+1/Path Sum I
+1/Path Sum II
+1/Populating Next Right Pointers in Each Node I
+1/Populating Next Right Pointers in Each Node II
+1/Recover Binary Search Tree
+0/Same Tree
+1/Sum root to leaf numbers
+1/Symmetric Tree
+2/Unique Binary Search Trees I [DP]
+3/Unique Binary Search Trees II
+0/Validate Binary Search Tree
 
 ==Dynamic programming:
-/Interleaving String
-/climbing stairs
-/combination sum I
-/combination sum II
-/combinations
-/decode ways
-/edit distance
-/generate parentheses
-/Minimum Path Sum
-/Unique Paths I
-/Unique Paths II
-/Distinct Subsequences
-/jump game I
-/jump game II
-/Minimum Window Substring
-/Wildcard Matching
-/Regular Expression Matching
-/distinct subsequence
-/Candy
-/Gas Station
-/Longest Consecutive Sequence
-/Longest Palindromic Substring
-/Triangle
-/Word Break I
-/Word Break II
+1/Candy
+0/climbing stairs
+2/decode ways
+2/Distinct Subsequences
+1/edit distance
+2/Gas Station
+1/Interleaving String
+1/jump game I - greedy
+1/jump game II - greedy
+1/Longest Consecutive Sequence
+2/Longest Palindromic Substring
+0/Minimum Path Sum
+1/Minimum Window Substring
+1/Triangle
+1/Regular Expression Matching
+0/Unique Paths I
+0/Unique Paths II
+1/Wildcard Matching
+2/Word Break I
+3/Word Break II
 
 ==Recursion:
-/Word Search    -dfs
-/Subsets I
-/Subsets II
-/Word Ladder I
-/Word Ladder II
-/Scramble String
-/Letter Combinations of a Phone Number
+0/combinations
+1/combination sum I
+1/combination sum II
+0/Letter Combinations of a Phone Number
+3/Scramble String
+1/Subsets I
+3/Subsets II
+1/Word Ladder I
+4/Word Ladder II -- Large LTE
+2/Word Search    -dfs
+2/Re1store IP Addresses
+1/generate parentheses
 
 ==Miscellaneous:
-/best time to buy and sell stock I
-/best time to buy and sell stock II
-/best time to buy and sell stock III
-/container with most water
-/count and say
-/gray code
-/Insert Interval
-/LRU Cache
-/Maximum Subarray
-/Max points on a line
-/Merge Intervals
-/Multiply Strings
-/Next Permutation
-/N-Queens I
-/N-Queens II
-/Palindrome Number
-/Pascal's Triangle I
-/Pascal's Triangle II
-/Permutation Sequence
-/Permutations
-/Permutations II
-/Plus One
-/Restore IP Addresses
-/Reverse Integer
-/Rotate Image
-/Single Number
-/Single Number II
-/String to Integer (atoi)
-/Trapping Rain Water
-/Valid Number
-/Valid Palindrome
+1/best time to buy and sell stock I
+1/best time to buy and sell stock II
+3/best time to buy and sell stock III
+1/container with most water
+1/count and say
+2/gray code
+2/Insert Interval
+3/LRU Cache
+0/Maximum Subarray
+1/Max points on a line
+1/Merge Intervals -- Keep inset interval into list..
+1/Multiply Strings
+1/N-Queens I
+1/N-Queens II
+1/Palindrome Number
+1/Pascal's Triangle I
+1/Pascal's Triangle II
+/-  -
+1/Permutation Sequence
+1/Permutations
+1/Permutations II
+1/Next Permutation
+/-
+0/Plus One
+0/Reverse Integer
+0/Single Number
+2/Single Number II
+1/String to Integer (atoi)
+1/Trapping Rain Water - same idea as candy
+1/Valid Number
+0/Valid Palindrome
 
 ==Stack:
-/Largest Rectangle in Histogram
-/Longest Valid Parentheses
-/Valid Parentheses
-/Evaluate Reverse Polish Notation
-/Maximal Rectangle
-/Simplify Path
+0/Evaluate Reverse Polish Notation
+1/Largest Rectangle in Histogram
+0/Longest Valid Parentheses
+0/Maximal Rectangle
+0/Simplify Path
+0/Valid Parentheses
 
 ==Math
-/divide two integers
-/Pow(x, n)
-/sqrt(x)
+0/divide two integers
+0/Pow(x, n)
+0/sqrt(x)
 
 ==Graph
-/Clone Graph
-/Surrounded regions
+1/Clone Graph
+2/Surrounded regions
 
 ==Not done yet:
 Integer to Roman
