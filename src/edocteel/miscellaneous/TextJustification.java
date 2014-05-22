@@ -35,7 +35,6 @@ public class TextJustification {
                 for (int i = 0; i < spaceCount; i++) {
                     builder.append(" ");
                 }
-                results.add(builder.toString());
             } else {
                 boolean lastLine = end == length - 1;
                 int spaceBase = lastLine ? 1 : (L - len) / (end - start);
@@ -56,8 +55,8 @@ public class TextJustification {
                         builder.append(" ");
                     }
                 }
-                results.add(builder.toString());
             }
+            results.add(builder.toString());
 
             start = end + 1;
             end = start;
