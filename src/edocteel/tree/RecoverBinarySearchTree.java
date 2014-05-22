@@ -16,7 +16,7 @@ public class RecoverBinarySearchTree {
         ArrayList<TreeNode> nodes = new ArrayList<TreeNode>();
         inOrder(root, nodes);
         TreeNode a = null, b = null;
-        int i = 0;
+        int i;
         for (i = 0; i < nodes.size() - 1; i++) {
             if (nodes.get(i).val > nodes.get(i+1).val) {
                 a = nodes.get(i);
