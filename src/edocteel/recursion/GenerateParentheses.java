@@ -22,9 +22,7 @@ public class GenerateParentheses {
             return;
         } else {
             helper(results, left-1, right, sum+1, result + "(");
-            if (sum > 0) {
-                helper(results, left, right-1, sum-1, result + ")");
-            }
+            helper(results, left, right-1, sum-1, result + ")");
         }
     }
 }
