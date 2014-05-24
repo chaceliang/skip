@@ -147,6 +147,8 @@
 1/Trapping Rain Water - same idea as candy
 1/Valid Number
 0/Valid Palindrome
+0/Sudoku Solver
+0/Valid Sudoku
 
 ==Stack:
 0/Evaluate Reverse Polish Notation
@@ -170,6 +172,4 @@ Integer to Roman
 Roman to Integer
 Text Justification
 ZigZag Conversion
-Sudoku Solver
-Valid Sudoku
 word ladder II
