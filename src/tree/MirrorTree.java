@@ -27,11 +27,7 @@ public class MirrorTree {
         n.left = n.right;
         n.right = tmp;
 
-        if (n.left != null) {
-            mirror2(n.left);
-        }
-        if (n.right != null) {
-            mirror2(n.right);
-        }
+        mirror2(n.left);
+        mirror2(n.right);
     }
 }
