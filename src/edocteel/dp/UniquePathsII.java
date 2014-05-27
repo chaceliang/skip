@@ -40,4 +40,44 @@ public class UniquePathsII {
         }
         return matrix[0][0];
     }
+
+    public static int uniquePathsWithObstacles2(int[][] obstacleGrid) {
+        if (obstacleGrid == null) {
+            return 0;
+        }
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+        if (m < 0 || n < 0 || obstacleGrid[m-1][n-1] == 1) {
+            return 0;
+        }
+        int[] dp = new int[n];
+        for (int i = n-1; i >= 0; i--) {
+            if (obstacleGrid[m-1][i] == 1) {
+                dp[i] = 0;
+            } else {
+                if (i != n-1) {
+                    dp[i] = dp[i+1];
+                } else {
+                    dp[i] = 1;
+                }
+            }
+        }
+        for (int i = m - 2; i >= 0; i--) {
+            for (int j = n - 1; j >= 0; j--) {
+                if (obstacleGrid[i][j] == 1) {
+                    dp[j] = 0;
+                } else {
+                    if (j != n-1) {
+                        dp[j] += dp[j+1];
+                    }
+                }
+            }
+        }
+        return dp[0];
+    }
+
+    public static void main(String[] args) {
+        int[][] A = {{0,0,0,0,0}, {0,0,0,0,1}, {0,0,0,1,0}, {0,0,1,0,0}};
+        System.out.println(uniquePathsWithObstacles2(A));
+    }
 }
