@@ -1,4 +1,4 @@
-package company.airbnb;
+package array;
 
 /**
  * Created by chace on 5/24/14.
