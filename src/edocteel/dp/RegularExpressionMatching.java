@@ -10,6 +10,26 @@ public class RegularExpressionMatching {
         return helper2(s, p);
     }
 
+    public boolean helper4(String s, int i, String p, int j) {
+        if (j == p.length()) {
+            return i == s.length();
+        }
+        if (j == p.length() - 1 || p.charAt(j+1) != '*') {
+            if (s.length() == i) {
+                return false;
+            }
+            return (p.charAt(j) == '.' || s.charAt(i) == p.charAt(j)) && helper4(s, i+1, p, j+1);
+        }
+
+        while (i < s.length() && (p.charAt(j) == '.' || s.charAt(i) == p.charAt(j))) {
+            if (helper4(s, i, p, j+2)) {
+                return true;
+            }
+            i++;
+        }
+        return helper4(s, i, p, j+2);
+    }
+
     public boolean helper3(String s, int si, String p, int pi) {
         if (pi >= p.length()) {
             return si >= s.length();
