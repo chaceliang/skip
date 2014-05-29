@@ -6,6 +6,62 @@ import java.util.Map;
 
 public class SubstringWithConcatenationOfAllWords {
 
+    public ArrayList<Integer> findSubstring2(String S, String[] L) {
+        ArrayList<Integer> results = new ArrayList<Integer>();
+        if (S == null || S.length() <= 0 || L == null || L.length <= 0 || L[0].length() * L.length > S.length()) {
+            return results;
+        }
+
+        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        for (int i = 0; i < L.length; i++) {
+            int count = 1;
+            if (map.containsKey(L[i])) {
+                count = map.get(L[i]) + 1;
+            }
+            map.put(L[i], count);
+        }
+
+        for (int i = 0; i < L[0].length(); i++) {
+            HashMap<String, Integer> curMap = new HashMap<String, Integer>();
+            int count = 0, left = i;
+            for (int j = i; j < S.length() - L[0].length(); j+=L[0].length()) {
+                String str = S.substring(j, j+L[0].length());
+                if (map.containsKey(str)) {
+                    if (curMap.containsKey(str)) {
+                        curMap.put(str, curMap.get(str) + 1);
+                    } else {
+                        curMap.put(str, 1);
+                    }
+                    if (curMap.get(str) <= map.get(str)) {
+                        count++;
+                    } else {
+                        while (curMap.get(str) > map.get(str)) {
+                            String tmp = S.substring(left, left+L[0].length());
+                            curMap.put(tmp, curMap.get(tmp) - 1);
+                            if (curMap.get(tmp) < map.get(tmp)) {
+                                count--;
+                            }
+                            left += L[0].length();
+                        }
+                    }
+                    if (count == L.length) {
+                        results.add(left);
+                        String tmp = S.substring(left, left+L[0].length());
+                        curMap.put(tmp, curMap.get(tmp) - 1);
+                        count--;
+                        left+=L[0].length();
+                    }
+                } else {
+                    curMap.clear();
+                    count = 0;
+                    left = j + L[0].length();
+                }
+            }
+        }
+
+        return results;
+    }
+
 	public ArrayList<Integer> findSubstring(String S, String[] L) {
 		if (S == null || S.length() <= 0 || L == null || L.length <= 0 || L[0].length() * L.length > S.length()) {
 			return new ArrayList<Integer>();
