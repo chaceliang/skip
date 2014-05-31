@@ -1,4 +1,4 @@
-package company.pinterest;
+package array;
 
 import java.util.ArrayList;
 

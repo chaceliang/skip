@@ -110,7 +110,7 @@
 1/Subsets I
 3/Subsets II
 1/Word Ladder I
-4/Word Ladder II -- Large LTE
+4/Word Ladder II
 2/Word Search    -dfs
 2/Re1store IP Addresses
 1/generate parentheses
@@ -149,6 +149,8 @@
 0/Valid Palindrome
 0/Sudoku Solver
 0/Valid Sudoku
+1/Integer to Roman
+1/Roman to Integer
 
 ==Stack:
 0/Evaluate Reverse Polish Notation
@@ -168,8 +170,5 @@
 2/Surrounded regions
 
 ==Not done yet:
-Integer to Roman
-Roman to Integer
 Text Justification
 ZigZag Conversion
-word ladder II

@@ -1,4 +1,4 @@
-package company.linkedin;
+package miscellaneous;
 
 import java.util.Random;
 
