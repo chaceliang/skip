@@ -5,13 +5,12 @@ package edocteel.string;
  */
 public class Strstr {
     public String strStr(String haystack, String needle) {
-        int i = 0;
         int len1 = haystack.length();
         int len2 = needle.length();
         if (len1 == 0 && len2 == 0) {
             return "";
         }
-        for (; i <= len1 - len2; i++) {
+        for (int i = 0; i <= len1 - len2; i++) {
             int a = i;
             int b = 0;
             boolean match = true;
