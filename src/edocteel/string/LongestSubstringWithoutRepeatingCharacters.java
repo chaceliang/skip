@@ -1,6 +1,7 @@
 package edocteel.string;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 
 public class LongestSubstringWithoutRepeatingCharacters {
 
@@ -10,7 +11,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 		}
 		int i = 0, j = 0;
 		int result = 0;
-		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+		Hashtable<Character, Integer> map = new Hashtable<Character, Integer>();
 		while (j < s.length()) {
 			Character c = s.charAt(j);
 			if (map.containsKey(c)) {
