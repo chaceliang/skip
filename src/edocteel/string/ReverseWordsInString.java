@@ -40,14 +40,42 @@ public class ReverseWordsInString {
         }
         return builder.toString().trim();
     }
-    
+
+    public String reverseWords2(String s) {
+        if (s == null) {
+            return s;
+        }
+        s = s.trim();
+        if (s.length() <= 0) return s;
+
+        int len = s.length();
+        char[] array = s.toCharArray();
+        reverse(array, 0, len-1);
+        int i = 0, j = 0;
+        StringBuilder builder = new StringBuilder();
+
+        while (i < len) {
+            while (array[i] == ' ') {
+                i++; j++;
+            }
+            if (j == len || array[j] == ' ') {
+                builder.append(reverse(array, i, --j));
+                builder.append(" ");
+                i = ++j;
+            } else {
+                j++;
+            }
+        }
+        return builder.toString().trim();
+    }
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		ReverseWordsInString instance = new ReverseWordsInString();
 		String test1 = "Hello world!";
-		System.out.println(instance.reverseWords(test1));
+		System.out.println(instance.reverseWords2(test1));
 	}
 
 }
