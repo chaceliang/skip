@@ -10,9 +10,6 @@ import java.util.ArrayList;
 public class UniqueBinarySearchTreesII {
 
     public ArrayList<TreeNode> generateTrees(int n) {
-        if (n == 0) {
-            return generate(1, 0);
-        }
         return generate(1, n);
     }
 
