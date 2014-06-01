@@ -14,16 +14,13 @@ public class ConvertSortedArrayToBinarySearchTree {
     }
 
     public TreeNode helper(int[] num, int start, int end) {
-        if (start < end) {
-            int mid = (start + end) / 2;
-            TreeNode node = new TreeNode(num[mid]);
-            node.left = helper(num, start, mid - 1);
-            node.right = helper(num, mid + 1, end);
-            return node;
-        } else if (start == end) {
-            return new TreeNode(num[start]);
-        } else {
+        if (start > end) {
             return null;
         }
+        int mid = (start + end) / 2;
+        TreeNode node = new TreeNode(num[mid]);
+        node.left = helper(num, start, mid - 1);
+        node.right = helper(num, mid + 1, end);
+        return node;
     }
 }
