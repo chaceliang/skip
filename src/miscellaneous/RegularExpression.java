@@ -43,5 +43,6 @@ public class RegularExpression {
         System.out.println(isMatch("abc", "a+bc"));
         System.out.println(isMatch("abc", "a+.*bc"));
         System.out.println(isMatch("abc", "a+.*b"));
+        System.out.println(isMatch("abc", "ab.*c+"));
     }
 }
