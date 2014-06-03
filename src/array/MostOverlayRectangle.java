@@ -1,5 +1,8 @@
 package array;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 /**
  * Created by chace on 5/27/14.
  */
@@ -7,6 +10,7 @@ public class MostOverlayRectangle {
 
     // Supposed R is sorted by ll;
     public static int mostOverlay(Retangle[] R) {
+        Arrays.sort(R);
         if (R == null || R.length <= 0) {
             return 0;
         }
@@ -43,12 +47,19 @@ class Retangle {
     }
 }
 
-class Point {
+class Point implements Comparable<Point> {
     int x;
     int y;
 
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    @Override
+    public int compareTo(Point point) {
+        double d = Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+        double d2 = Math.sqrt(Math.pow(point.x, 2) + Math.pow(point.y, 2));
+        return (int)(d - d2);
     }
 }
