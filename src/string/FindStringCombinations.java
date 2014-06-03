@@ -1,4 +1,4 @@
-package company.airbnb;
+package string;
 
 import java.util.ArrayList;
 
