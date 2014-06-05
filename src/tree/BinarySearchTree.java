@@ -1,5 +1,7 @@
 package tree;
 
+import java.util.NoSuchElementException;
+
 /**
  * Created by chace on 6/3/14.
  */
@@ -133,8 +135,52 @@ class Node {
     public int value;
     public Node left;
     public Node right;
-
+    public Node parent;
     public Node(int v) {
         this.value = v;
+    }
+}
+
+class TreeIterator {
+    private Node next;
+
+    public TreeIterator(Node root) {
+        next = root;
+        if (next == null) {
+            return;
+        }
+        while (next.left != null) {
+            next = next.left;
+        }
+    }
+
+    public boolean hasNext() {
+        return next != null;
+    }
+
+    public Node next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+        Node r = next;
+        if (next.right != null) {
+            next = next.right;
+            while (next.left != null) {
+                next = next.left;
+            }
+        } else {
+            while (true) {
+                if (next.parent == null) {
+                    next = null;
+                    return r;
+                }
+                if (next.parent.left == next) {
+                    next = next.parent;
+                    return r;
+                }
+                next = next.parent;
+            }
+        }
+        return null;
     }
 }
