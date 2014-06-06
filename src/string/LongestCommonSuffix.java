@@ -1,4 +1,4 @@
-package company.google;
+package string;
 
 import java.util.Arrays;
 import java.util.LinkedList;
