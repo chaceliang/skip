@@ -1,5 +1,7 @@
 package array;
 
+import java.util.Hashtable;
+
 /**
  * Created by chace on 5/25/14.
  */
