@@ -19,10 +19,11 @@ public class Readline {
                 builder.append(buffer.charAt(i));
                 i++;
             }
-            buffer = buffer.substring(i+1);
-            if (i == builder.length()) {
+            if (i == buffer.length()) {
+                buffer = "";
                 return builder.toString() + readLine();
             } else {
+                buffer = buffer.substring(i+1);
                 return builder.toString();
             }
         } else {
