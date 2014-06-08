@@ -26,8 +26,8 @@ public class GetNext {
         TreeNode parent = root;
         TreeNode curr = root;
         while (curr != n) {
-            parent = curr;
             if (curr.val > n.val) {
+                parent = curr;
                 curr = curr.left;
             } else if (curr.val < n.val) {
                 curr = curr.right;
