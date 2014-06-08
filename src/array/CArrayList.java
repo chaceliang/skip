@@ -5,12 +5,12 @@ import java.util.Arrays;
 /**
  * Created by chace on 6/4/14.
  */
-public class ArrayList {
+public class CArrayList {
 
     private Object[] objects;
     private int actSize = 0;
 
-    public ArrayList() {
+    public CArrayList() {
         objects = new Object[10];
     }
 
