@@ -10,6 +10,23 @@ public class AllSubstring {
 
     public static ArrayList<String> allSubstring(String str, char[] dict) {
         ArrayList<String> results = new ArrayList<String>();
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = 1; j <= str.length() - i; j++) {
+                String sub = str.substring(i, i+j);
+                if (sub.length() == 1) {
+                    if ((i == 0 || !sub.equals(str.substring(i-1, i))) && !containsAll(sub, dict)) {
+                        results.add(sub);
+                    }
+                } else if (!containsAll(sub, dict)){
+                    results.add(sub);
+                }
+            }
+        }
+        return results;
+    }
+
+    public static ArrayList<String> allCombination(String str, char[] dict) {
+        ArrayList<String> results = new ArrayList<String>();
         ArrayList<String> prev = new ArrayList<String>();
         results.add("");
         for (int i = 0; i < str.length(); i++) {
@@ -17,7 +34,7 @@ public class AllSubstring {
             ArrayList<String> p = i == 0 || str.charAt(i) != str.charAt(i-1) ? results : prev;
             for (String s : p) {
                 String t = s + str.charAt(i);
-                if (t.length() <= dict.length && !containsAll(t, dict)) {
+                if (!containsAll(t, dict)) {
                     tmp.add(t);
                 }
             }
@@ -41,12 +58,9 @@ public class AllSubstring {
         for (int i = 0; i < str.length(); i++) {
             char t = str.charAt(i);
             map.put(t, map.get(t) - 1);
-            if (map.get(t) < 0) {
-                return false;
-            }
         }
         for (Character c : map.keySet()) {
-            if (map.get(c) != 0) {
+            if (map.get(c) > 0) {
                 return false;
             }
         }
@@ -54,7 +68,7 @@ public class AllSubstring {
     }
 
     public static void main(String[] args) {
-        ArrayList<String> results = allSubstring("abbc", new char[] {'a', 'b', 'c'});
+        ArrayList<String> results = allCombination("abbc", new char[] {'a', 'b', 'c'});
         for (String str : results) {
             System.out.println(str);
         }
