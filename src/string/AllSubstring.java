@@ -10,16 +10,25 @@ public class AllSubstring {
 
     public static ArrayList<String> allSubstring(String str, char[] dict) {
         ArrayList<String> results = new ArrayList<String>();
+        ArrayList<String> prev = new ArrayList<String>();
         for (int i = 0; i < str.length(); i++) {
-            for (int j = 1; j <= str.length() - i; j++) {
-                String sub = str.substring(i, i+j);
-                if (sub.length() == 1) {
-                    if ((i == 0 || !sub.equals(str.substring(i-1, i))) && !containsAll(sub, dict)) {
-                        results.add(sub);
-                    }
-                } else if (!containsAll(sub, dict)){
-                    results.add(sub);
+            ArrayList<String> tmp = new ArrayList<String>();
+            String t = str.substring(i, i+1);
+            if (i == 0 || !t.equals(str.substring(i-1, i))) {
+                tmp.add(t);
+            }
+            for (String p : prev) {
+                String substring = p + t;
+                if (!prev.contains(substring) && (substring.length() <= dict.length || !containsAll(substring, dict))) {
+                    tmp.add(substring);
                 }
+            }
+            results.addAll(tmp);
+            prev = tmp;
+            int j = i - 1;
+            while (j > 0 && t.equals(str.substring(j, j+1))) {
+                prev.add(str.substring(j, i));
+                j--;
             }
         }
         return results;
@@ -68,7 +77,7 @@ public class AllSubstring {
     }
 
     public static void main(String[] args) {
-        ArrayList<String> results = allCombination("abbc", new char[] {'a', 'b', 'c'});
+        ArrayList<String> results = allSubstring("abbb", new char[]{'a', 'b', 'c'});
         for (String str : results) {
             System.out.println(str);
         }
