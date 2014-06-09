@@ -14,17 +14,15 @@ public class Anagram {
 		
 		HashMap<String, LinkedList<String>> counter = new HashMap<String, LinkedList<String>>();
 		for (int i = 0; i < strs.length; i++) {
-			char[] array = strs[i].toCharArray();
-			Arrays.sort(array);
-			String sorted = new String(array);
+			String key = generateLabel(strs[i]);
 			LinkedList<String> list = null;
-			if (counter.get(sorted) == null) {
+			if (counter.get(key) == null) {
 				list = new LinkedList<String>();
 			} else {
-				list = counter.get(sorted);
+				list = counter.get(key);
 			}
 			list.add(strs[i]);
-			counter.put(sorted, list);
+			counter.put(key, list);
 		}
 		
 		Iterator iter = counter.entrySet().iterator();
@@ -79,6 +77,23 @@ public class Anagram {
             }
         }
         return true;
+    }
+
+    public static String generateLabel(String str) {
+        int[] hash = new int[26];
+        for (int i = 0; i < str.length(); i++) {
+            int index = str.charAt(i) - 'a';
+            hash[index]++;
+        }
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < 26; i++) {
+            if (hash[i] > 0) {
+                char c = (char)('a' + i);
+                builder.append(c);
+                builder.append(hash[i]);
+            }
+        }
+        return builder.toString();
     }
 	/**
 	 * @param args
