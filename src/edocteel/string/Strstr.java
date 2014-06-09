@@ -13,17 +13,15 @@ public class Strstr {
         for (int i = 0; i <= len1 - len2; i++) {
             int a = i;
             int b = 0;
-            boolean match = true;
             while (b < len2) {
-                if (a >= len1 || haystack.charAt(a) != needle.charAt(b)) {
-                    match = false;
+                if (haystack.charAt(a) != needle.charAt(b)) {
                     break;
                 } else {
                     a++;
                     b++;
                 }
             }
-            if (match) {
+            if (b == len2) {
                 return haystack.substring(i);
             }
         }
