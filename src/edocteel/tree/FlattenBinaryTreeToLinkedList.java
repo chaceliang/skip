@@ -21,10 +21,13 @@ public class FlattenBinaryTreeToLinkedList {
     }
 
     public TreeNode findRightMost(TreeNode node) {
-        if (node == null || node.right == null) {
+        if (node == null) {
             return node;
         }
-        return findRightMost(node.right);
+        while (node.right != null) {
+            node = node.right;
+        }
+        return node;
     }
 
 }
