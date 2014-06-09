@@ -5,22 +5,24 @@ import base.ListNode;
 public class RemoveDuplicateFromSortedListII {
 
 	public ListNode deleteDuplicates(ListNode head) {
-		ListNode dummy = new ListNode(-1);
-		dummy.next = head;
-		ListNode current = dummy;
-		while (current.next != null) {
-			ListNode prev = current;
-			current = current.next;
-			boolean isDuplicate = false;
-			
-			while (current != null && current.next != null && current.val == current.next.val) {
-				current = current.next;
-				isDuplicate = true;
-			}
-			prev.next = isDuplicate ? current.next : current;
-			current = isDuplicate ? prev : current;
-		}
-		return dummy.next;
+        ListNode dummy = new ListNode(-1);
+        ListNode prev = dummy;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            boolean isDuplicate = false;
+            while (next != null && curr.val == next.val) {
+                isDuplicate = true;
+                next = next.next;
+            }
+            if (!isDuplicate) {
+                prev.next = curr;
+                prev = prev.next;
+            }
+            prev.next = null;
+            curr = next;
+        }
+        return dummy.next;
 	}
 	/**
 	 * @param args
