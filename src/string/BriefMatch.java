@@ -15,7 +15,6 @@ public class BriefMatch {
                     num = num * 10 + (brief.charAt(j) - '0');
                     j++;
                 }
-                int oldI = i;
                 while (i < m && i < i + num) {
                     i++;
                     num--;
