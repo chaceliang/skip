@@ -6,6 +6,36 @@ import java.util.*;
  * Created by chace on 5/7/14.
  */
 public class LongestConsecutiveSequence {
+
+    private int findConsecutive(HashSet<Integer> set, int num, int step) {
+        int len = 0;
+        while (set.contains(num)) {
+            len++;
+            set.remove(num);
+            num += step;
+        }
+        return len;
+    }
+
+    public int longestConsecutiveFaster(int[] nums) {
+        HashSet<Integer> set = new HashSet<Integer>();
+        for (int i : nums) {
+            set.add(i);
+        }
+        int maxLen = 0;
+        for (int i : nums) {
+            if (set.contains(i)) {
+                set.remove(i);
+                int len = 1 + findConsecutive(set, i-1, -1);
+                len += findConsecutive(set, i+1, 1);
+                if (len > maxLen) {
+                    maxLen = len;
+                }
+            }
+        }
+        return maxLen;
+    }
+
     public int longestConsecutive1(int[] num) {
         if (num == null || num.length <= 0) {
             return 0;
