@@ -1,4 +1,4 @@
-package company.google;
+package miscellaneous;
 
 import java.util.*;
 
