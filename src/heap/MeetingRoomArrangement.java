@@ -16,7 +16,7 @@ public class MeetingRoomArrangement {
         }
         int num = 0;
         Arrays.sort(meetings);
-        PriorityQueue<Meeting> queue = new PriorityQueue<Meeting>(1000, new MeetingComparator());
+        PriorityQueue<Meeting> queue = new PriorityQueue<Meeting>(meetings.length, new MeetingComparator());
         for (int i = 0; i < meetings.length; i++) {
             if (queue.isEmpty() || meetings[i].start < queue.peek().end) {
                 num++;
