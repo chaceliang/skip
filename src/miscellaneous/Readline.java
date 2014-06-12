@@ -15,7 +15,7 @@ public class Readline {
         if (!buffer.equals("")) {
             StringBuilder builder = new StringBuilder();
             int i = 0;
-            while (buffer.charAt(i) != '\n' && i < buffer.length()) {
+            while (i < buffer.length() && buffer.charAt(i) != '\n') {
                 builder.append(buffer.charAt(i));
                 i++;
             }
