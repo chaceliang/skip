@@ -34,6 +34,7 @@ public class LongestRepeatString {
         return str.substring(maxIndex, maxIndex + maxLen);
     }
 
+    // O(nlgn)
     public static String lrs(String str) {
         String[] suffix = new String[str.length()];
         for (int i = 0; i < str.length(); i++) {
