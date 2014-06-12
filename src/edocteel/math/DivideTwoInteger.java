@@ -6,7 +6,7 @@ package edocteel.math;
 public class DivideTwoInteger {
     public static int divide(int dividend, int divisor) {
         if (divisor == 0) {
-            return -1;
+            throw new ArithmeticException();
         }
         long a = dividend, b = divisor;
         boolean neg = false;
