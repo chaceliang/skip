@@ -7,7 +7,47 @@ import java.util.Iterator;
 
 public class ThreeSum {
 
-	public ArrayList<ArrayList<Integer>> threeSum(int[] num) {
+    public static ArrayList<ArrayList<Integer>> threeSum(int[] num) {
+        if (num == null) {
+            throw new NullPointerException();
+        }
+        ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();
+
+        if (num.length < 3) {
+            return results;
+        }
+
+        Arrays.sort(num);
+
+        for (int i = 0; i < num.length; i++) {
+            if (i > 0 && num[i-1] == num[i]) {
+                continue;
+            }
+            int start = i + 1, end = num.length - 1;
+            while (start < end) {
+                int sum = num[i] + num[start] + num[end];
+                if (sum < 0) {
+                    start++;
+                } else if (sum > 0) {
+                    end--;
+                } else {
+                    ArrayList<Integer> result = new ArrayList<Integer>();
+                    result.add(num[i]); result.add(num[start]); result.add(num[end]);
+                    results.add(result);
+                    do {
+                        start++;
+                    } while (start < end && num[start] == num[start - 1]);
+                    do {
+                        end--;
+                    } while (start < end && num[end] == num[end + 1]);
+                }
+            }
+        }
+
+        return results;
+    }
+
+	public ArrayList<ArrayList<Integer>> threeSum1(int[] num) {
         ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();
 		if(num.length == 0) return results;
 		
@@ -42,7 +82,7 @@ public class ThreeSum {
 		
 		return results;
     }
-	
+
 	/**
 	 * @param args
 	 */
