@@ -11,8 +11,8 @@ public class Question27BST2DoubleLinkedList {
 	
 	public static TreeNode append(TreeNode a, TreeNode b) {
         // if either is null, return the other
-        if (a==null) return(b);
-        if (b==null) return(a);
+        if (a == null) return b;
+        if (b == null) return a;
         
         // find the last node in each using the .previous pointer
         TreeNode aLast = a.left;
@@ -22,12 +22,12 @@ public class Question27BST2DoubleLinkedList {
         join(aLast, b);
         join(bLast, a);
         
-        return(a);
+        return a;
     }
 
 	public static TreeNode treeToList(TreeNode root) {
         // base case: empty tree -> empty list
-        if (root==null) return(null);
+        if (root == null) return null;
         
         // Recursively do the subtrees (leap of faith!)
         TreeNode aList = treeToList(root.left);
