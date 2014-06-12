@@ -5,7 +5,7 @@ package edocteel.dp;
  */
 public class EditDistance {
     // Each operation cost 1
-    public int minDistance(String word1, String word2) {
+    public static int minDistance(String word1, String word2) {
         if (word1 == null || word2 == null) {
             return -1;
         }
@@ -46,5 +46,9 @@ public class EditDistance {
             }
         }
         return dp[l1][l2];
+    }
+
+    public static void main(String[] args) {
+        System.out.println(minDistance("cat", "cast"));
     }
 }
