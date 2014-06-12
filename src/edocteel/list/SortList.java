@@ -3,7 +3,7 @@ package edocteel.list;
 import base.ListNode;
 
 public class SortList {
-	
+
 	public ListNode merge(ListNode l1, ListNode l2) {
 		ListNode head = new ListNode(-1);
 		ListNode l = head;
