@@ -7,7 +7,31 @@ import java.util.Arrays;
  * Created by chace on 5/4/14.
  */
 public class CombinationSum {
-    public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+
+    public static ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+        ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();
+        Arrays.sort(candidates);
+        addUp(candidates, 0, target, new ArrayList<Integer>(), results);
+        return results;
+    }
+
+    public static void addUp(int[] candidates, int start, int target, ArrayList<Integer> paths, ArrayList<ArrayList<Integer>> results) {
+        if (start < 0 || target < 0) {
+            return;
+        }
+        if (target == 0) {
+            ArrayList<Integer> res = new ArrayList<Integer>(paths);
+            results.add(res);
+        } else {
+            for (int i = start; i < candidates.length && candidates[i] <= target; i++) {
+                paths.add(candidates[i]);
+                addUp(candidates, i, target - candidates[i], paths, results);
+                paths.remove(paths.size() - 1);
+            }
+        }
+    }
+
+    public ArrayList<ArrayList<Integer>> combinationSum1(int[] candidates, int target) {
         ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();
         int[] indexes = new int[1000000];
         indexes[0] = 0;
