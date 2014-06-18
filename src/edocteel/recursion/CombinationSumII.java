@@ -18,17 +18,16 @@ public class CombinationSumII {
     public void solve(ArrayList<ArrayList<Integer>> results, ArrayList<Integer> result, int[] num, int start, int target) {
         if (target == 0) {
             results.add((ArrayList<Integer>)result.clone());
-        } else if (target < 0 || start == num.length) {
+        } else if (start == num.length) {
             return;
         } else {
-            int prev = -1;
-            for (int i = start; i < num.length; i++) {
-                if (prev != num[i]) {
-                    result.add(num[i]);
-                    solve(results, result, num, i + 1, target - num[i]);
-                    result.remove(result.size() - 1);
-                    prev = num[i];
+            for (int i = start; i < num.length && num[i] <= target; i++) {
+                if (i > start && num[i] == num[i-1]) {
+                    continue;
                 }
+                result.add(num[i]);
+                solve(results, result, num, i + 1, target - num[i]);
+                result.remove(result.size() - 1);
             }
         }
     }
