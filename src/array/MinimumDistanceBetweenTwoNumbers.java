@@ -13,14 +13,12 @@ public class MinimumDistanceBetweenTwoNumbers {
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < A.length; i++) {
             if (A[i] == x || A[i] == y) {
-                if (prev == -1) {
-                    prev = i;
-                } else {
+                if (prev != -1) {
                     if (A[prev] != A[i] && i - prev < min) {
                         min = i - prev;
                     }
-                    prev = i;
                 }
+                prev = i;
             }
         }
         return min;
