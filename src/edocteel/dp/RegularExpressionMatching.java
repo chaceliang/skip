@@ -5,39 +5,46 @@ package edocteel.dp;
  */
 public class RegularExpressionMatching {
 
-    // Not working yet
     public boolean isMatchDP(String s, String p) {
+        if (s.length() == 0 && p.length() == 0) {
+            return true;
+        }
+
+        if (p.length() == 0) {
+            return false;
+        }
         int M = s.length(), N = p.length();
-        boolean[][] match = new boolean[M+1][N+1];
-        match[0][0] = true;
-        for (int i = 0; i <= M; i++) {
-            match[i][0] = false;
-        }
-
-        for (int i = 0; i < N; i++) {
-            if (p.charAt(i+1) != '*') {
-                break;
-            }
-            match[0][i+2] = true;
-            i++;
-        }
-
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
-                if (p.charAt(j) == '*') {
-                    continue;
+        boolean[][] res = new boolean[M+1][N+1];
+        res[0][0] = true;
+        for(int j = 0; j < N; j++) {
+            if (p.charAt(j) == '*') {
+                if (j>0 && res[0][j-1]) res[0][j+1]=true;
+                if (j<1) continue;
+                if (p.charAt(j-1)!='.') {
+                    for(int i = 0; i < M; i++) {
+                        if(res[i+1][j] || j>0&&res[i+1][j-1]
+                                || i>0 && j>0 && res[i][j+1]&&s.charAt(i)==s.charAt(i-1)&&s.charAt(i-1)==p.charAt(j-1))
+                            res[i+1][j+1] = true;
+                    }
                 }
-                boolean any = p.charAt(j) == '.';
-                boolean mul = p.charAt(j+1) == '*';
-                char c = p.charAt(j);
-                if (mul) {
-                    match[i+1][j+2] = ((any || c == s.charAt(i)) && (match[i][j] || match[i][j+2])) || match[i+1][j];
-                } else {
-                    match[i+1][j+1] = (any || c == s.charAt(i)) && match[i][j];
+                else {
+                    int i=0;
+                    while(j>0 && i < M && !res[i+1][j-1] && !res[i+1][j])
+                        i++;
+                    for(; i < M; i++)
+                    {
+                        res[i+1][j+1] = true;
+                    }
                 }
             }
+            else {
+                for(int i=0; i < M; i++) {
+                    if(s.charAt(i)==p.charAt(j) || p.charAt(j)=='.')
+                        res[i+1][j+1] = res[i][j];
+                }
+            }
         }
-        return match[M][N];
+        return res[M][N];
     }
 
 
