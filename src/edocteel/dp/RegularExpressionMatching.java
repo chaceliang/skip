@@ -5,6 +5,42 @@ package edocteel.dp;
  */
 public class RegularExpressionMatching {
 
+    // Not working yet
+    public boolean isMatchDP(String s, String p) {
+        int M = s.length(), N = p.length();
+        boolean[][] match = new boolean[M+1][N+1];
+        match[0][0] = true;
+        for (int i = 0; i <= M; i++) {
+            match[i][0] = false;
+        }
+
+        for (int i = 0; i < N; i++) {
+            if (p.charAt(i+1) != '*') {
+                break;
+            }
+            match[0][i+2] = true;
+            i++;
+        }
+
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                if (p.charAt(j) == '*') {
+                    continue;
+                }
+                boolean any = p.charAt(j) == '.';
+                boolean mul = p.charAt(j+1) == '*';
+                char c = p.charAt(j);
+                if (mul) {
+                    match[i+1][j+2] = ((any || c == s.charAt(i)) && (match[i][j] || match[i][j+2])) || match[i+1][j];
+                } else {
+                    match[i+1][j+1] = (any || c == s.charAt(i)) && match[i][j];
+                }
+            }
+        }
+        return match[M][N];
+    }
+
+
     public boolean isMatch(String s, String p) {
 //        return helper(s, 0, p, 0);
         return helper2(s, p);
@@ -122,6 +158,6 @@ public class RegularExpressionMatching {
 
     public static void main(String[] args) {
         RegularExpressionMatching test = new RegularExpressionMatching();
-        System.out.println(test.isMatch("ba", ".*a*a"));
+        System.out.println(test.isMatchDP("aa", "a"));
     }
 }
