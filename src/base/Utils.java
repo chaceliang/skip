@@ -4,8 +4,8 @@ package base;
  * Created by chace on 6/18/14.
  */
 public class Utils {
-    public static void swap(int[] A, int a, int b) {
-        int tmp = A[a];
+    public static void swap(Object[] A, int a, int b) {
+        Object tmp = A[a];
         A[a] = A[b];
         A[b] = tmp;
     }
