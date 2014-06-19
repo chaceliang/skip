@@ -18,6 +18,9 @@ public class PathSumII {
     }
 
     public void helper(ArrayList<ArrayList<Integer>> results, ArrayList<Integer> result, TreeNode root, int sum) {
+        if (root == null) {
+            return;
+        }
         if (root.left == null && root.right == null) {
             if (sum == root.val) {
                 result.add(root.val);
