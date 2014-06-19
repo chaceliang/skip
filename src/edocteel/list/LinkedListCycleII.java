@@ -17,7 +17,7 @@ public class LinkedListCycleII {
         }
         if (fast == null) {
             return null;
-        } else if (fast.val == slow.val) {
+        } else {
             slow = head;
             while (fast.val != slow.val) {
                 fast = fast.next;
@@ -25,7 +25,6 @@ public class LinkedListCycleII {
             }
             return fast;
         }
-        return null;
     }
 
     public ListNode abc(ListNode head) {
