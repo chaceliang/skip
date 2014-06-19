@@ -23,23 +23,23 @@ public class PalindromePartitioning {
         ArrayList<ArrayList<String>> results = new ArrayList<ArrayList<String>>();
         ArrayList<String> result = new ArrayList<String>();
 
-        palinPartition(s, 0, s.length(), result, results);
+        palinPartition(s, 0, result, results);
 
         return results;
     }
 
-    public void palinPartition(String s, int start, int len, ArrayList<String> result, ArrayList<ArrayList<String>> results) {
-        if (start == len) {
+    public void palinPartition(String s, int start, ArrayList<String> result, ArrayList<ArrayList<String>> results) {
+        if (start == s.length()) {
             ArrayList<String> tmp = new ArrayList<String>();
             tmp.addAll(result);
             results.add(tmp);
             return;
         }
 
-        for (int i = start; i < len; i++) {
+        for (int i = start; i < s.length(); i++) {
             if (isPalindrome(s, start, i)) {
                 result.add(s.substring(start, i+1));
-                palinPartition(s, i+1, len, result, results);
+                palinPartition(s, i+1, result, results);
                 result.remove(result.size() - 1);
             }
         }
