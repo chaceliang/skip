@@ -2,13 +2,14 @@ package edocteel.recursion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by chace on 5/8/14.
  */
 public class Subsets {
-    public ArrayList<ArrayList<Integer>> subsets(int[] S) {
-        ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();
+    public List<List<Integer>> subsets(int[] S) {
+        List<List<Integer>> results = new ArrayList<List<Integer>>();
         results.add(new ArrayList<Integer>());
         Arrays.sort(S);
         for (int i = 0; i < S.length; i++) {
