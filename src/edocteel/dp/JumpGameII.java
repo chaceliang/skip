@@ -6,15 +6,12 @@ package edocteel.dp;
 public class JumpGameII {
     public int jumpFast(int[] A) {
         int steps = 0;
-        for (int i = 0, max = 0, next = 0; i < A.length - 1; i++) {
-            max = Math.max(A[i]+i, max);
-            if (i == next) {
-                if (max == next) {
-                    return -1;
-                }
+        for (int i = 0, max = 0, next = 0; i < A.length && next < A.length; i++) {
+            if (i > next) {
                 next = max;
                 steps++;
             }
+            max = Math.max(A[i]+i, max);
         }
         return steps;
     }
