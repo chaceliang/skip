@@ -29,6 +29,23 @@ public class DistinctSubsequences {
         return dp[T.length()][S.length()];
     }
 
+    public int numDistinctR(String S, String T) {
+        return numSubseq(S, T, S.length() - 1, T.length() - 1);
+    }
+
+    private int numSubseq(String S, String T, int si, int ti) {
+        if (si < 0 || ti < 0 || si < ti) return 0;
+
+        if (S.charAt(si) == T.charAt(ti)) {
+            if (ti == 0) {
+                return numSubseq(S, T, si - 1, ti) + 1;
+            } else {
+                return numSubseq(S, T, si - 1 , ti) + numSubseq(S, T, si - 1, ti - 1);
+            }
+        }
+        return numSubseq(S, T, si - 1, ti);
+    }
+
     public int numDistinct1(String S, String T) {
         if (S.length() == 0) {
             return T.length() == 0 ? 1 : 0;
