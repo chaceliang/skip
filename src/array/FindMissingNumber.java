@@ -12,7 +12,7 @@ public class FindMissingNumber {
             throw new NullPointerException();
         }
         for (int i = 0; i < A.length; i++) {
-            while (A[i] != A[A[i] - 1]) {
+            while (A[i] - 1 >= 0 && A[i] - 1 < A.length && A[i] != A[A[i] - 1]) {
                 swap(A, i, A[i] - 1);
             }
         }
