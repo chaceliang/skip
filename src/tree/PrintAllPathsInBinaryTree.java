@@ -26,6 +26,41 @@ public class PrintAllPathsInBinaryTree {
         }
     }
 
+    public static void printAllPathsNonRecursion(TreeNode root) {
+        ArrayList<TreeNode> path = new ArrayList<TreeNode>();
+        TreeNode curr = root;
+        while (true) {
+            if (curr == null) {
+                break;
+            }
+
+            if (curr.left == null && curr.right == null && curr.visited == true) {
+                System.out.println(path);
+                curr = curr.parent;
+                path.remove(path.size() - 1);
+            } else if (curr.left != null && !curr.left.visited) {
+                if (!curr.visited) {
+                    curr.visited = true;
+                    path.add(curr);
+                }
+                curr = curr.left;
+            } else if (curr.right != null && !curr.right.visited) {
+                if (!curr.visited) {
+                    curr.visited = true;
+                    path.add(curr);
+                }
+                curr = curr.right;
+            } else {
+                if (!curr.visited) {
+                    curr.visited = true;
+                    path.add(curr);
+                } else {
+                    curr = curr.parent;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(8);
         root.left = new TreeNode(4);
