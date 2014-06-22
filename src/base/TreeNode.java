@@ -18,4 +18,8 @@ public class TreeNode {
         this.leftChildrenNumber = 0;
         this.rightChildrenNumber = 0;
 	}
+
+    public String toString() {
+        return Integer.toString(val);
+    }
 }
