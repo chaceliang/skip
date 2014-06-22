@@ -26,12 +26,12 @@ public class TrappingRainWater {
         int ctrap = 0, ttrap = 0;
         for (int i = length - 2; i > 0; i--) {
             r[i] = max;
+            if (max < A[i]) {
+                max = A[i];
+            }
             ctrap = Math.min(l[i], r[i]) - A[i];
             if (ctrap > 0) {
                 ttrap += ctrap;
-            }
-            if (max < A[i]) {
-                max = A[i];
             }
         }
         return ttrap;
