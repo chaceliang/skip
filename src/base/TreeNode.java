@@ -6,6 +6,7 @@ public class TreeNode {
 	public TreeNode left;
 	public TreeNode right;
     public TreeNode parent;
+    public boolean visited;
 
     public int leftChildrenNumber;
     public int rightChildrenNumber;
@@ -17,6 +18,7 @@ public class TreeNode {
         this.parent = null;
         this.leftChildrenNumber = 0;
         this.rightChildrenNumber = 0;
+        this.visited = false;
 	}
 
     public String toString() {
