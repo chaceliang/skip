@@ -26,4 +26,24 @@ public class InterleavingString {
         }
         return dp[s1L][s2L];
     }
+
+    public boolean isInterleaveRecursion(String s1, String s2, String s3) {
+        if (s1.length() + s2.length() != s3.length()) {
+            return false;
+        }
+        return util(s1.toCharArray(), 0, s2.toCharArray(), 0, s3.toCharArray(), 0);
+    }
+
+    public boolean util(char[] s1, int n1, char[] s2, int n2, char[] s3, int n3) {
+        if (n1 == s1.length && n2 == s2.length && n3 == s3.length) {
+            return true;
+        }
+        if (n1 == s1.length) {
+            return s2[n2] == s3[n3] && util(s1, n1, s2, n2+1, s3, n3+1);
+        }
+        if (n2 == s2.length) {
+            return s1[n1] == s3[n3] && util(s1, n1+1, s2, n2, s3, n3+1);
+        }
+        return (s1[n1] == s3[n3] && util(s1, n1+1, s2, n2, s3, n3+1)) || s2[n2] == s3[n3] && util(s1, n1, s2, n2+1, s3, n3+1);
+    }
 }
