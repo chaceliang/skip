@@ -25,7 +25,7 @@ public class ScrewNut {
         }
     }
 
-    public int partitionNut(int[] s, int n, int beg, int end) {
+    public int partitionByNut(int[] s, int n, int beg, int end) {
         int i = beg;
         int t = -1;
         for (int j = beg; j <= end; j++) {
@@ -42,7 +42,7 @@ public class ScrewNut {
         return i - 1;
     }
 
-    public int partitionScrew(int[] n, int s, int beg, int end) {
+    public int partitionByScrew(int[] n, int s, int beg, int end) {
         int i = beg;
         int t = -1;
         for (int j = beg; j <= end; j++) {
@@ -63,8 +63,8 @@ public class ScrewNut {
         if (beg >= end) {
             return;
         }
-        int p = partitionNut(screws, nuts[beg], beg, end);
-        int q = partitionScrew(nuts, screws[beg], beg, end);
+        int p = partitionByNut(screws, nuts[beg], beg, end);
+        int q = partitionByScrew(nuts, screws[beg], beg, end);
 
         arrange(screws, nuts, beg, p - 1);
         arrange(screws, nuts, p + 1, end);
