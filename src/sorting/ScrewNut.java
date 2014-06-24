@@ -66,6 +66,9 @@ public class ScrewNut {
         int p = partitionByNut(screws, nuts[beg], beg, end);
         int q = partitionByScrew(nuts, screws[beg], beg, end);
 
+        if (p != q) {
+            return;
+        }
         arrange(screws, nuts, beg, p - 1);
         arrange(screws, nuts, p + 1, end);
     }
