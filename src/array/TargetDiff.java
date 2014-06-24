@@ -34,6 +34,25 @@ public class TargetDiff {
         return results;
     }
 
+    public static void targetDifference(int[] A, int k) {
+        if (A == null || A.length <= 0) {
+            return;
+        }
+        Arrays.sort(A);
+        int i = 0, j = A.length - 1;
+        while (i < j) {
+            int tmp = A[j] - A[i];
+            if (tmp == k) {
+                System.out.println(i + " " + j);
+                return;
+            } else if (tmp > k) {
+                j--;
+            } else {
+                i++;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         ArrayList<Pair> results = cal(new int[]{1,2,3,4,5}, 2);
         for (Pair p : results) {
