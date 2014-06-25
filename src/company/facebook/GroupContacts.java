@@ -24,6 +24,7 @@ public class GroupContacts {
                     cs = new ArrayList<Contact>();
                 }
                 cs.add(c);
+                mapping.put(email, cs);
             }
         }
         List<List<Contact>> results = new ArrayList<List<Contact>>();
