@@ -168,6 +168,7 @@ class TreeIterator {
             while (next.left != null) {
                 next = next.left;
             }
+            return next;
         } else {
             while (true) {
                 if (next.parent == null) {
@@ -181,6 +182,5 @@ class TreeIterator {
                 next = next.parent;
             }
         }
-        return null;
     }
 }
