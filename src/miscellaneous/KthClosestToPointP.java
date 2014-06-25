@@ -15,10 +15,10 @@ public class KthClosestToPointP {
         PointComparator comparator = new PointComparator(p);
         PriorityQueue<Point> queue = new PriorityQueue<Point>(k, comparator);
         for (int i = 0; i < len; i++) {
-            if (queue.size() == k) {
+            queue.add(points[i]);
+            if (queue.size() > k) {
                 queue.poll();
             }
-            queue.add(points[i]);
         }
         return queue.poll();
     }
