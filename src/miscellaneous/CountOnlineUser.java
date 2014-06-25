@@ -15,8 +15,8 @@ public class CountOnlineUser {
         for (int i = 0; i < users.length; i++) {
             Timestamp tsi = new Timestamp(users[i].login, Type.LOGIN);
             Timestamp tso = new Timestamp(users[i].logout, Type.LOGOUT);
-            timestamps[i] = tsi;
-            timestamps[i+1] = tso;
+            timestamps[i*2] = tsi;
+            timestamps[i*2+1] = tso;
         }
         Arrays.sort(timestamps);
         int count = 0;
