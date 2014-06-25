@@ -52,9 +52,9 @@ public class FindIn2DArray {
 	public static void main(String[] args) {
 		int[][] input1 = {
 				{1,2,8,9},
-				{3,4,9,12},
-				{4,7,10,13},
-				{6,8,11,15}
+				{3,9,10,12},
+				{4,10,11,13},
+				{6,12,13,15}
 		};
 		int[][] input2 = {
 				{1,2,8,9}
