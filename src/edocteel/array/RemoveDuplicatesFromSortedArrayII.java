@@ -28,7 +28,7 @@ public class RemoveDuplicatesFromSortedArrayII {
             }
             fast++;
         }
-        while (slow < length) {
+        while (slow < slow + 2 && slow < length) {
             A[index++] = A[slow++];
         }
         return index;
