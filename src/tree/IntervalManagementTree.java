@@ -18,14 +18,11 @@ public class IntervalManagementTree {
             return null;
         }
         IntervalNode current = root;
-        while (current.compareTo(tmp) != 0) {
+        while (current != null && current.compareTo(tmp) != 0) {
             if (current.compareTo(tmp) > 0) {
                 current = current.left;
             } else if (current.compareTo(tmp) < 0) {
                 current = current.right;
-            }
-            if (current == null) {
-                break;
             }
         }
         return current;
