@@ -124,7 +124,6 @@ public class IntervalManagementTree {
             successorParent.left = successor.right;
             successor.right = x.right;
         }
-        successor.left = x.left;
         return successor;
     }
 }
