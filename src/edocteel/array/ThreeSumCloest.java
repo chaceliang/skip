@@ -10,17 +10,17 @@ public class ThreeSumCloest {
 		}
 		Arrays.sort(num);
 		int len = num.length;
-		int cloest = Integer.MAX_VALUE;
-		int cloestSum = 0;
+		int closetSum = 0;
+        int closet = Integer.MAX_VALUE;
 		for (int i = 0; i < len - 2; i++) {
 			int start = i + 1;
 			int end = len - 1;
 			while (start < end) {
 				int runningSum = num[i] + num[start] + num[end];
-				int runningCloest = Math.abs(runningSum - target);
-				if (runningCloest < cloest) {
-					cloest = runningCloest;
-					cloestSum = runningSum;
+				int runningCloset = Math.abs(runningSum - target);
+				if (runningCloset < closet) {
+                    closet = runningCloset;
+                    closetSum = runningSum;
 				}
 				if (runningSum > target) {
 					end--;
@@ -31,7 +31,7 @@ public class ThreeSumCloest {
 				}
 			}
 		}
-		return cloestSum;
+		return closetSum;
     }
 	/**
 	 * @param args
