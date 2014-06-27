@@ -11,14 +11,11 @@ public class LengthOfLastWord {
 		while (end >= 0 && s.charAt(end) == ' ') {
 			end--;
 		}
-		if (end < 0) {
-			return 0;
-		}
 		int start = end;
-		while (start - 1 >= 0 && s.charAt(start - 1) != ' ') {
+		while (start >= 0 && s.charAt(start) != ' ') {
 			start--;
 		}
-		return end - start + 1;
+		return end - start;
 	}
 	/**
 	 * @param args
