@@ -7,6 +7,18 @@ import java.util.ArrayList;
  */
 public class PalindromePartitioning {
 
+    /*Given a string s, partition s such that every substring of the partition is a palindrome.
+
+    Return all possible palindrome partitioning of s.
+
+    For example, given s = "aab",
+    Return
+
+      [
+        ["aa","b"],
+        ["a","a","b"]
+      ]
+  */
     public boolean isPalindrome(String s, int i, int j) {
         while (i < j) {
             if (s.charAt(i) != s.charAt(j)) {
