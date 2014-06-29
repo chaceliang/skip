@@ -26,6 +26,7 @@ public class ReplaceSpace {
             if (j == len) {
                 break;
             }
+            // Add space between words
             swap(tmp, i, j);
             i++;
             j++;
@@ -40,6 +41,6 @@ public class ReplaceSpace {
     }
 
     public static void main(String[] args) {
-        System.out.println(replaceSpace("Hello   World        yoyo "));
+        System.out.println(replaceSpace("  Hello   World        yoyo ") + "|");
     }
 }
