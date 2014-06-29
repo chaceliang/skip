@@ -53,7 +53,6 @@ public class TreeTraversal {
                 results.add(c.val);
                 stack.push(c);
                 c = c.left;
-
             }
         }
         return results;
