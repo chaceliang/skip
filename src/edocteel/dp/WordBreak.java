@@ -20,7 +20,7 @@ public class WordBreak {
                     seg[i][len] = true;
                     continue;
                 }
-                for (int k = 1; k < len; k++) {
+                for (int k = i+1; k < len; k++) {
                     if (seg[i][k] && seg[i+k][len-k]) {
                         seg[i][len] = true;
                         break;
