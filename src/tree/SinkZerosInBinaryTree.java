@@ -25,7 +25,7 @@ public class SinkZerosInBinaryTree {
             node.val = 0;
         }
     }
-    
+
     public static void sink02(TreeNode node, Stack<TreeNode> stack) {
         if (node.val == 0) {
             stack.push(node);
