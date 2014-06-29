@@ -12,8 +12,8 @@ public class PrintTriangle {
             return;
         }
         int[] A = new int[N];
+        A[0] = 1;
         for (int i = 0; i < N; i++) {
-            A[0] = 1;
             int[] prev = A.clone();
             for (int j = 1; j <= i - 1; j++) {
                 A[j] = prev[j-1] + prev[j];
