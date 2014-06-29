@@ -20,7 +20,7 @@ public class SlidingWindowMaximum {
             que.addLast(i++);
         }
         int[] max = new int[A.length - w + 1];
-        max[i-w] = que.getFirst();
+        max[0] = que.getFirst();
         while (i < A.length) {
             while (!que.isEmpty() && A[que.getLast()] <= A[i]) {
                 que.removeLast();
