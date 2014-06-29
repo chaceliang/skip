@@ -11,17 +11,22 @@ public class FindMissingNumber {
         if (A == null) {
             throw new NullPointerException();
         }
-        for (int i = 0; i < A.length; i++) {
-            while (A[i] - 1 >= 0 && A[i] - 1 < A.length && A[i] != A[A[i] - 1]) {
-                swap(A, i, A[i] - 1);
+        int i = 0;
+        while (i < A.length) {
+            if (A[i] != i && A[i] >= 0 && A[i] < A.length && A[A[i]] != A[i]) {
+                swap(A, i, A[i]);
+                continue;
             }
+            i++;
         }
+
         ArrayList<Integer> missing = new ArrayList<Integer>();
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] != i+1) {
-                missing.add(i+1);
+        for (i = 1; i < A.length; i++) {
+            if (A[i] != i) {
+                missing.add(i);
             }
         }
+
         return missing;
     }
 
