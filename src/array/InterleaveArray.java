@@ -1,5 +1,7 @@
 package array;
 
+import base.Utils;
+
 /**
  * Created by chace on 5/22/14.
  */
@@ -7,6 +9,18 @@ public class InterleaveArray {
     // a1a2a3b1b2b3 => a1b1a2b2a3b3
 
     public void interleave(int[] A) {
+        if (A == null) {
+            throw new NullPointerException();
+        }
+        int len = A.length;
+        for (int i = len/2-1; i >= 1; i--) {
+            for (int j = i; j < len - i - 1; j += 2) {
+                swap(A, j, j+1);
+            }
+        }
+    }
+
+    public void interleave1(int[] A) {
         if (A == null || A.length <= 0) {
             return;
         }
@@ -17,12 +31,18 @@ public class InterleaveArray {
                 swap(A, n - i + 2 * j, n - i + 2 * j + 1);
             }
         }
-
     }
 
     public void swap(int[] A, int i, int j) {
         int tmp = A[i];
         A[i] = A[j];
         A[j] = tmp;
+    }
+
+    public static void main(String[] args) {
+        int[] A = new int[] {1,2,3,4,5,6};
+        InterleaveArray test = new InterleaveArray();
+        test.interleave(A);
+        Utils.printArray(A);
     }
 }
