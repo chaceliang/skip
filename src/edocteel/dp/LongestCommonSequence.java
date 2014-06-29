@@ -11,7 +11,7 @@ public class LongestCommonSequence {
         }
         StringBuilder builder = new StringBuilder();
         int l1 = word1.length(), l2 = word2.length();
-        int[][] dp = new int[l1][l2];
+        int[][] dp = new int[l1+1][l2+1];
         for (int i = 0; i <= l1; i++) {
             dp[i][0] = 0;
         }
