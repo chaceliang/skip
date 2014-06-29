@@ -20,6 +20,18 @@ public class InterleaveArray {
         }
     }
 
+    public void reverse(int[] A) {
+        if (A == null) {
+            throw new NullPointerException();
+        }
+        int len = A.length;
+        for (int i = 1; i <= len/2 - 1; i++) {
+            for (int j = i; j < len - i - 1; j += 2) {
+                swap(A, j, j+1);
+            }
+        }
+    }
+
     public void interleave1(int[] A) {
         if (A == null || A.length <= 0) {
             return;
@@ -40,9 +52,11 @@ public class InterleaveArray {
     }
 
     public static void main(String[] args) {
-        int[] A = new int[] {1,2,3,4,5,6};
+        int[] A = new int[] {1,2,3,4,5,6,7,8};
         InterleaveArray test = new InterleaveArray();
         test.interleave(A);
+        Utils.printArray(A);
+        test.reverse(A);
         Utils.printArray(A);
     }
 }
