@@ -5,6 +5,22 @@ package array;
  */
 public class FindRotatedPosition {
 
+    public static int findRotatedPosition1(int[] A) {
+        if (A == null) {
+            throw new NullPointerException();
+        }
+        int l = 0, r = A.length - 1;
+        while (A[l] > A[r]) {
+            int mid = (l + r)/2;
+            if (A[mid] > A[r]) {
+                l = mid+1;
+            } else {
+                r = mid;
+            }
+        }
+        return A[l];
+    }
+
     // No-duplicate
     public static int findRotatedPosition(int[] A) {
         if (A == null) {
@@ -32,12 +48,12 @@ public class FindRotatedPosition {
     }
 
     public static void main(String[] args) {
-        System.out.println(findRotatedPosition(new int[] {1,2,3,4,5,5,6,7}));
-        System.out.println(findRotatedPosition(new int[] {4,4,4,5,6,6,7,7,7,1,1,1,1,2,3}));
-        System.out.println(findRotatedPosition(new int[] {1,2}));
-        System.out.println(findRotatedPosition(new int[] {2,1}));
-        System.out.println(findRotatedPosition(new int[] {2,3,1}));
-        System.out.println(findRotatedPosition(new int[] {1}));
+        System.out.println(findRotatedPosition1(new int[] {1,2,3,4,5,5,6,7}));
+        System.out.println(findRotatedPosition1(new int[] {4,4,4,5,6,6,7,7,7,1,1,1,1,2,3}));
+        System.out.println(findRotatedPosition1(new int[] {1,2}));
+        System.out.println(findRotatedPosition1(new int[] {2,1}));
+        System.out.println(findRotatedPosition1(new int[] {2,3,1}));
+        System.out.println(findRotatedPosition1(new int[] {1}));
 
     }
 }
