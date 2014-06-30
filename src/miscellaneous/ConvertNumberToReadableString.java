@@ -5,19 +5,10 @@ package miscellaneous;
  */
 public class ConvertNumberToReadableString {
 
-    static String[] suffix = new String[] {
-            "",
-            "Thousand",
-            "Million",
-            "Billion",
-            "Trillion"
-    };
-    static String[] NUM = {"One", "Two", "Three", "Four", "Five",
-    "Six", "Seven", "Eight", "Nine"};
-    static String[] TEN = {"Twenty", "Thirty", "Forty", "Fifty",
-    "Sixty", "Seventy", "Eighty", "Ninety"};
-    static String[] UNDER_TWENTY = {"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
-    "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+    static String[] suffix = {"", "Thousand", "Million", "Billion", "Trillion"};
+    static String[] NUM = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+    static String[] TEN = {"", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+    static String[] UNDER_TWENTY = {"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
 
     public static String convert(int num) {
         int partNum = 0;
@@ -47,7 +38,7 @@ public class ConvertNumberToReadableString {
         if (num >= 100) {
             int hundredNum = num / 100;
             num = num % 100;
-            builder.append(NUM[hundredNum - 1]);
+            builder.append(NUM[hundredNum]);
             builder.append(" Hundred");
         }
         if (builder.length() > 0 && num > 0) {
@@ -56,14 +47,14 @@ public class ConvertNumberToReadableString {
         if (num >= 20) {
             int tenNum = num / 10;
             num = num % 10;
-            builder.append(TEN[tenNum - 2]);
+            builder.append(TEN[tenNum]);
             if (num > 0) {
-                builder.append(" " + NUM[num - 1]);
+                builder.append(" " + NUM[num]);
             }
         } else if (num >= 10) {
             builder.append(UNDER_TWENTY[num - 10]);
         } else if (num > 0) {
-            builder.append(NUM[num - 1]);
+            builder.append(NUM[num]);
         }
         return builder.toString();
     }
