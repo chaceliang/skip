@@ -17,23 +17,24 @@ public class EvaluateArithmaticExpression {
         int len = args.length;
         for (int i = 0; i < len; i++) {
             if (isDigital(args[i])) {
-                numberCache.push(Double.parseDouble(args[i]));
+                numberCache.add(Double.parseDouble(args[i]));
             } else if (args[i].equals("*") || args[i].equals("/")) {
                 if (numberCache.isEmpty() || i == len -1 || !isDigital(args[i+1])) {
                     throw new ArithmeticException();
                 }
-                double d1 = numberCache.pop();
+                double d1 = numberCache.getLast();
+                numberCache.removeLast();
                 double d2 = Double.parseDouble(args[i+1]);
-                numberCache.push(cal(d1, d2, args[i]));
+                numberCache.add(cal(d1, d2, args[i]));
                 i++;
             } else if (args[i].equals("+") || args[i].equals("-")) {
-                operationCache.push(args[i]);
+                operationCache.add(args[i]);
             }
         }
         while (!operationCache.isEmpty()) {
-            double d2 = numberCache.get(0);
-            numberCache.remove(0);
             double d1 = numberCache.get(0);
+            numberCache.remove(0);
+            double d2 = numberCache.get(0);
             numberCache.remove(0);
             String op = operationCache.get(0);
             operationCache.remove(0);
@@ -66,7 +67,7 @@ public class EvaluateArithmaticExpression {
 
     public static void main(String[] args) {
         System.out.println(evaluate(new String[]{"4", "*", "7", "+", "4"}));
-        System.out.println(evaluate(new String[]{"4", "-", "7", "+", "4"}));
+        System.out.println(evaluate(new String[]{"5", "-", "7", "+", "4"}));
         System.out.println(evaluate(new String[]{"4", "-", "7", "*", "4"}));
         System.out.println(evaluate(new String[]{"4", "-", "7", "/", "4"}));
         System.out.println(evaluate(new String[]{"20", "-", "7", "*", "4"}));
