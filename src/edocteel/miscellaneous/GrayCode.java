@@ -19,13 +19,10 @@ public class GrayCode {
         if (n == 1) {
             return result;
         }
-        ArrayList<Integer> prevResult = new ArrayList<Integer>();
         for (int i = 2; i <= n; i++) {
-            prevResult = new ArrayList<Integer>(result);
             for (int j = result.size() - 1; j >= 0; j--) {
-                prevResult.add((int)(result.get(j) + Math.pow(2, i-1)));
+                result.add((int)(result.get(j) + Math.pow(2, i-1)));
             }
-            result = prevResult;
         }
         return result;
     }
