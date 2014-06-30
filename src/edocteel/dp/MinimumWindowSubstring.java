@@ -21,8 +21,8 @@ public class MinimumWindowSubstring {
         int wildStart = 0;
         int appeared = 0;
         for (int wildEnd = 0; wildEnd < lenS; wildEnd++) {
+            appearCount[S.charAt(wildEnd)]++;
             if (expectedCount[S.charAt(wildEnd)] > 0) {
-                appearCount[S.charAt(wildEnd)]++;
                 if (appearCount[S.charAt(wildEnd)] <= expectedCount[S.charAt(wildEnd)]) {
                     appeared++;
                 }
