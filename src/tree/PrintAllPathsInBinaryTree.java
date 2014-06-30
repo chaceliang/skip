@@ -12,20 +12,24 @@ import java.util.Stack;
  */
 public class PrintAllPathsInBinaryTree {
     public static void printAllPaths(TreeNode root) {
-        printAllPathsUtil(root, new ArrayList<TreeNode>());
+        printAllPathsUtil(root, new ArrayList<TreeNode>(), 0);
     }
 
-    public static void printAllPathsUtil(TreeNode n, ArrayList<TreeNode> path) {
+    public static void printAllPathsUtil(TreeNode n, ArrayList<TreeNode> path, int index) {
         if (n == null) {
             return;
         }
-        path.add(n);
+        if (index >= path.size()) {
+            path.add(index, n);
+        } else {
+            path.set(index, n);
+        }
         if (n.left == null && n.right == null) {
             System.out.println(path);
             path.remove(path.size() - 1);
         } else {
-            printAllPathsUtil(n.left, path);
-            printAllPathsUtil(n.right, path);
+            printAllPathsUtil(n.left, path, index+1);
+            printAllPathsUtil(n.right, path, index+1);
         }
     }
 
@@ -116,6 +120,6 @@ public class PrintAllPathsInBinaryTree {
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
 
-        printPaths(root);
+        printAllPathsUtil(root, new ArrayList<TreeNode>(), 0);
     }
 }
