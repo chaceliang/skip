@@ -23,7 +23,7 @@ public class GetNext {
             return getMin(n.right);
         }
 
-        TreeNode parent = root;
+        TreeNode parent = null;
         TreeNode curr = root;
         while (curr != n) {
             if (curr.val > n.val) {
