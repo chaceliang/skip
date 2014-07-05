@@ -19,9 +19,9 @@ public class NumberAppearMoreThanN {
         for (int i = 0; i < len; i++) {
             if (counter.containsKey(A[i])) {
                 counter.put(A[i], counter.get(A[i]) + 1);
-            } else if (counter.size() < k) {
+            } else if (counter.size() < k-1) {
                 counter.put(A[i], 1);
-            } else if (counter.size() >= k) {
+            } else if (counter.size() >= k-1) {
                 for (Integer key : counter.keySet()) {
                     counter.put(key, counter.get(key) - 1);
                     if (counter.get(key) == 0) {
@@ -37,7 +37,7 @@ public class NumberAppearMoreThanN {
                     times++;
                 }
             }
-            if (times >= times / k) {
+            if (times > len / k) {
                 System.out.println(key);
             }
         }
