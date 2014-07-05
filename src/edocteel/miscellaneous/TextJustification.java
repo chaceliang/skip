@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public class TextJustification {
 
-    public ArrayList<String> fullJustify(String[] words, int L) {
+    public static ArrayList<String> fullJustify(String[] words, int L) {
         ArrayList<String> results = new ArrayList<String>();
         int length = words.length;
         if (length == 0) {
@@ -40,7 +40,7 @@ public class TextJustification {
                 int spaceBase = lastLine ? 1 : (L - len) / (end - start);
                 int bonus = lastLine ? 0 : (L - len - spaceBase * (end - start));
                 builder.append(words[start]);
-                for (int i = start + 1; i <= end; i++) {
+                for (int i = start+1; i <= end; i++) {
                     for (int j = 0; j < spaceBase; j++) {
                         builder.append(" ");
                     }
@@ -64,5 +64,10 @@ public class TextJustification {
         }
 
         return results;
+    }
+
+    public static void main(String[] args) {
+        String[] A = {"a", "b", "c", "d", "e"};
+        fullJustify(A, 3);
     }
 }
