@@ -19,25 +19,29 @@ public class NestedListDeepIterator<T> implements Iterator<T> {
 
     @Override
     public boolean hasNext() {
-        if (stack.isEmpty()) {
-            return false;
+        synchronized (stack) {
+            if (stack.isEmpty()) {
+                return false;
+            }
+            ArrayPosition top = stack.peek();
+            if (top.array.size() <= top.index) {
+                stack.pop();
+                return hasNext();
+            }
+            if (top.peekItem() instanceof ArrayList) {
+                stack.push(new ArrayPosition((ArrayList)top.takeItem()));
+                return hasNext();
+            }
+            return true;
         }
-        ArrayPosition top = stack.peek();
-        if (top.array.size() <= top.index) {
-            stack.pop();
-            return hasNext();
-        }
-        if (top.peekItem() instanceof ArrayList) {
-            stack.push(new ArrayPosition((ArrayList)top.takeItem()));
-            return hasNext();
-        }
-        return true;
     }
 
     @Override
     public T next() {
-        ArrayPosition top = stack.peek();
-        return (T)top.takeItem();
+        synchronized (stack) {
+            ArrayPosition top = stack.peek();
+            return (T)top.takeItem();
+        }
     }
 
     @Override
