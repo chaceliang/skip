@@ -8,11 +8,11 @@ import java.util.Stack;
 /**
  * Created by chace on 7/5/14.
  */
-public class ListDeepIterator<T> implements Iterator<T> {
+public class NestedListDeepIterator<T> implements Iterator<T> {
 
     public Stack<ArrayPosition> stack;
 
-    public ListDeepIterator(ArrayList list) {
+    public NestedListDeepIterator(ArrayList list) {
         stack = new Stack<ArrayPosition>();
         stack.push(new ArrayPosition(list));
     }
@@ -50,7 +50,7 @@ public class ListDeepIterator<T> implements Iterator<T> {
         ArrayList al = new ArrayList(Arrays.asList(new Integer[]{1,2,3}));
         al.add(new ArrayList(Arrays.asList(new Integer[]{4, 5})));
         al.add(new ArrayList());
-        ListDeepIterator di = new ListDeepIterator<Integer>(al);
+        NestedListDeepIterator di = new NestedListDeepIterator<Integer>(al);
         while (di.hasNext()) {
             int m = (Integer) di.next();
             System.out.println(m);
