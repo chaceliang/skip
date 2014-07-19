@@ -38,9 +38,7 @@ public class FirstMissingPositiveNumber {
 		// Case: [0,1,2,3], [5,1,2,3]
 		return A.length;
 	}
-	/**
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
 		System.out.println(firstMissingPositive(new int[] {1,0}));
 	}
