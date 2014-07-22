@@ -1,5 +1,6 @@
 package array;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 /**
@@ -22,11 +23,15 @@ public class NumberAppearMoreThanN {
             } else if (counter.size() < k-1) {
                 counter.put(A[i], 1);
             } else if (counter.size() >= k-1) {
+                ArrayList<Integer> toRemove = new ArrayList<Integer>();
                 for (Integer key : counter.keySet()) {
                     counter.put(key, counter.get(key) - 1);
                     if (counter.get(key) == 0) {
-                        counter.remove(key);
+                        toRemove.add(key);
                     }
+                }
+                for (Integer key : toRemove) {
+                    counter.remove(key);
                 }
             }
         }
@@ -44,7 +49,7 @@ public class NumberAppearMoreThanN {
     }
 
     public static void main(String[] args) {
-        int[] A =  {3, 1, 2, 2, 1, 2, 3, 3};
-        find(A, 4);
+        int[] A =  {3, 1, 2, 2, 1, 2, 3, 3, 3};
+        find(A, 3);
     }
 }
