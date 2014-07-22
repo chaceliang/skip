@@ -19,7 +19,7 @@ public class LocalMinimal {
         if (j - i == 1) {
             return A[i] < A[j] ? A[i] : A[j];
         }
-        int mid = (j - i) / 2;
+        int mid = (i + j) / 2;
         if (A[mid-1] > A[mid] && A[mid] < A[mid+1]) {
             return A[mid];
         }
