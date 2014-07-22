@@ -2,12 +2,14 @@ package array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Created by chace on 5/26/14.
  */
 public class IntersectionOfTwoArrays {
 
+    // Sorted
     public static ArrayList<Integer> intersection(int[] A, int[] B) {
         ArrayList<Integer> results = new ArrayList<Integer>();
         Arrays.sort(A);
@@ -24,6 +26,29 @@ public class IntersectionOfTwoArrays {
                 i++;
             }
         }
+        return results;
+    }
+
+    // Unsorted Handle duplicate
+    public static ArrayList<Integer> intersection2(int[] A, int[] B) {
+        ArrayList<Integer> results = new ArrayList<Integer>();
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        for (int i = 0; i < A.length; i++) {
+            if (map.containsKey(A[i])) {
+                map.put(A[i], map.get(A[i]) + 1);
+            } else {
+                map.put(A[i], 1);
+            }
+        }
+
+        for (int i = 0; i < B.length; i++) {
+            if (map.containsKey(B[i]) && map.get(B[i]) > 0) {
+                results.add(B[i]);
+                map.put(B[i], map.get(B[i]) - 1);
+            }
+        }
+
         return results;
     }
 
