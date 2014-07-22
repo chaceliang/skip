@@ -40,9 +40,9 @@ public class PrintDiagonal {
 
     public static void main(String[] args) {
         char[][] A = {{'a', 'b', 'c', 'd'},
-                {'e', 'f', 'g', 'h'},
-                {'i', 'j', 'k', 'l'},
-                {'m', 'n', 'o', 'p'}};
+                      {'e', 'f', 'g', 'h'},
+                      {'i', 'j', 'k', 'l'},
+                      {'m', 'n', 'o', 'p'}};
         ArrayList<ArrayList<Character>> results = print(A);
         for (ArrayList<Character> result : results) {
             for (Character c : result) {
