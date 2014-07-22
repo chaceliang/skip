@@ -12,11 +12,10 @@ public class MinimumAbsoluteDistance {
         int minimum = Integer.MAX_VALUE;
         int m = x.length, n = y.length;
         while (xi < m && yi < n) {
+            minimum = Math.min(minimum, Math.abs(x[xi] - y[yi]));
             if (x[xi] >= y[yi]) {
-                minimum = Math.min(minimum, x[xi] - y[yi]);
                 yi++;
             } else {
-                minimum = Math.min(minimum, y[yi] - x[xi]);
                 xi++;
             }
         }
