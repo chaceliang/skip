@@ -13,21 +13,38 @@ public class SearchForARange {
     Given [5, 7, 7, 8, 8, 10] and target value 8,
     return [3, 4].
      */
-	public int[] searchRange(int[] A, int target) {
+	public static int[] searchRange(int[] A, int target) {
         int start = -1, end = -1;
         if (A == null || A.length <= 0) {
             return new int[] {start, end};
         }
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] == target) {
-                if (start == -1) {
-                    start = i;
-                    end = i;
-                } else {
-                    end = i;
-                }
-            } 
+
+        int i = 0, j = A.length - 1;
+        while (i <= j) {
+            int mid = (i + j) / 2;
+            if (A[mid] >= target) {
+                j = mid - 1;
+            } else {
+                i = mid + 1;
+            }
         }
+        if (i < A.length && A[i] == target) {
+            start = i;
+        }
+
+        j = A.length - 1;
+        while (i <= j) {
+            int mid = (i + j) / 2;
+            if (A[mid] <= target) {
+                i = mid + 1;
+            } else {
+                j = mid - 1;
+            }
+        }
+        if (j >= 0 && A[j] == target) {
+            end = j;
+        }
+
         return new int[] {start, end};
     }
 	
@@ -35,8 +52,8 @@ public class SearchForARange {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int[] A = {5, 7, 7, 8, 8, 10};
+        searchRange(A, 8);
 	}
 
 }
