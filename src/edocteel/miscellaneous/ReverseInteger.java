@@ -22,15 +22,16 @@ public class ReverseInteger {
     }
 
     public static int reverse2(int x) {
+        long tmp = x;
         boolean isNegative = false;
-        if (x < 0) {
+        if (tmp < 0) {
             isNegative = true;
-            x *= -1;
+            tmp *= -1;
         }
         long result = 0;
-        while (x > 0) {
-            result = result * 10 + x % 10;
-            x /= 10;
+        while (tmp > 0) {
+            result = result * 10 + tmp % 10;
+            tmp /= 10;
         }
         if (isNegative) {
             result *= -1;
